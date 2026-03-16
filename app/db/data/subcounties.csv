@@ -1,0 +1,326 @@
+countyId,name
+1,Changamwe
+1,Jomvu
+1,Kisauni
+1,Likoni
+1,Mvita
+1,Nyali
+2,Kinango
+2,Lunga Lunga
+2,Matuga
+2,Msambweni
+3,Ganze
+3,Kaloleni
+3,Kilifi North
+3,Kilifi South
+3,Magarini
+3,Magarini North
+3,Magarini South
+3,Malindi
+3,Rabai
+4,Bura
+4,Galole
+4,Garsen
+5,Lamu East
+5,Lamu West
+6,Mwatate
+6,Taveta
+6,Voi
+6,Wundanyi
+7,Balambala
+7,Daadab
+7,Fafi
+7,Garissa Township
+7,Hulugho
+7,Ijara
+7,Lagdera
+7,Liboi
+8,Eldas
+8,Tarbaj
+8,Wajir East
+8,Wajir North
+8,Wajir South
+8,Wajir West
+9,Banissa
+9,Lafey
+9,Mandera East
+9,Mandera North
+9,Mandera South
+9,Mandera West
+10,Laisamis
+10,Moyale
+10,North Hor
+10,Saku
+11,Garbatulla
+11,Illeret
+11,Isiolo
+11,Merti
+11,Oldonyiro
+11,Sericho
+12,Buuri
+12,Igembe Central
+12,Igembe North
+12,Igembe South
+12,Imenti Central
+12,Imenti North
+12,Imenti South
+12,Maua
+12,Mukothima
+12,Ndithini
+12,Nuu
+12,Tharaka West
+12,Tigania East
+12,Tigania West
+12,Akachiu
+13,Chuka
+13,Igambango'mbe
+13,Maara
+13,Mukothima 2
+13,Ndithini 2
+13,Nuu 2
+13,Tharaka North
+13,Tharaka South
+13,Chiakariga and Muthambi
+14,Manyatta
+14,Mbeere North
+14,Mbeere South
+14,Runyenjes
+15,Kitui Central
+15,Kitui East
+15,Kitui Rural
+15,Kitui South
+15,Kitui West
+15,Mwingi Central
+15,Mwingi North
+15,Mwingi West
+16,Kathiani
+16,Machakos Town
+16,Masinga
+16,Matungulu
+16,Mavoko
+16,Mwala
+16,Yatta
+17,Kaiti
+17,Kibwezi East
+17,Kibwezi West
+17,Kilome
+17,Makueni
+17,Mbooni
+18,Kinangop
+18,Kipipiri
+18,Ndaragwa
+18,Ol Joro Orok
+18,Ol-Kalou
+19,Kieni East
+19,Kieni West
+19,Mathira East
+19,Mathira West
+19,Mukurweini
+19,Nyeri Town
+19,Othaya
+19,Tetu
+20,Kirinyaga Central
+20,Kirinyaga East
+20,Kirinyaga West
+20,Mwea East
+20,Mwea West
+21,Gatanga
+21,Kahuro
+21,Kandara
+21,Kangema
+21,Kigumo
+21,Kiharu
+21,Mathioya
+21,Murang'a South
+22,Gatundu North
+22,Gatundu South
+22,Githunguri
+22,Juja
+22,Kabete
+22,Kiambaa
+22,Kiambu
+22,Kikuyu
+22,Lari
+22,Limuru
+22,Ruiru
+22,Thika Town
+23,Loima
+23,Turkana Central
+23,Turkana East
+23,Turkana North
+23,Turkana South
+23,Kolowa
+24,Central Pokot
+24,North Pokot
+24,Pokot South
+24,West Pokot
+24,Kolowa 2
+25,Samburu East
+25,Samburu North
+25,Samburu West
+26,Cherangany
+26,Endebess
+26,Kiminini
+26,Kwanza
+26,Saboti
+27,Ainabkoi
+27,Kapseret
+27,Kesses
+27,Moiben
+27,Soy
+27,Turbo
+28,Keiyo North
+28,Keiyo South
+28,Marakwet East
+28,Marakwet West
+29,Aldai
+29,Chesumei
+29,Emgwen
+29,Mosop
+29,Nandi Hills
+29,Tindiret
+30,Baringo North
+30,Baringo South
+30,Baringo West
+30,Eldama Ravine
+30,Mogotio
+30,Mukutani
+30,Tiaty
+31,Laikipia Central
+31,Laikipia East
+31,Laikipia North
+31,Laikipia West
+31,Nyahururu
+32,Bahati
+32,Engineer
+32,Gilgil
+32,Kuresoi North
+32,Kuresoi South
+32,Molo
+32,Naivasha
+32,Nakuru Town East
+32,Nakuru Town West
+32,Njoro
+32,Rongai
+32,Subukia
+33,Narok East
+33,Narok North
+33,Narok South
+33,Narok West
+33,Transmara East
+33,Transmara West
+34,Isinya
+34,Kajiado Central
+34,Kajiado North
+34,Loitokitok
+34,Mashuuru
+35,Ainamoi
+35,Belgut
+35,Bureti
+35,Kipkelion East
+35,Kipkelion West
+35,Soin
+35,Soin/Sigowet
+35,Sigowet
+36,Bomet Central
+36,Bomet East
+36,Chepalungu
+36,Konoin
+36,Sotik
+37,Butere
+37,Kakamega Central
+37,Kakamega East
+37,Kakamega North
+37,Kakamega South
+37,Khwisero
+37,Lugari
+37,Lukuyani
+37,Lurambi
+37,Matete
+37,Mumias
+37,Mutungu
+37,Navakholo
+38,Emuhaya
+38,Hamisi
+38,Luanda
+38,Sabatia
+38,Vihiga
+39,Bumula
+39,Kabuchai
+39,Kanduyi
+39,Kimilili
+39,Mt Elgon
+39,Sirisia
+39,Tongaren
+39,Webuye East
+39,Webuye West
+40,Budalangi
+40,Butula
+40,Funyula
+40,Nambele
+40,Teso North
+40,Teso South
+41,Alego Usonga
+41,Bondo
+41,North East Kano
+41,Gem
+41,Rarieda
+41,Siaya West
+41,Ugenya
+41,Ugunja
+42,Kisumu Central
+42,Kisumu East
+42,Kisumu West
+42,Muhoroni
+42,Nyakach
+42,Nyando
+42,Seme
+43,Homabay Town
+43,Kabondo
+43,Karachwonyo
+43,Kasipul
+43,Mbita
+43,Ndhiwa
+43,Ndhiwa East
+43,Rangwe
+43,Suba
+44,Awendo
+44,Kuria East
+44,Kuria West
+44,Mabera
+44,Ntimaru
+44,Rongo
+44,Suna East
+44,Suna West
+44,Uriri
+45,Bobasi
+45,Bomachoge Borabu
+45,Bomachoge Chache
+45,Bonchari
+45,Kitutu Chache North
+45,Kitutu Chache South
+45,Nyaribari Chache
+45,Nyaribari Masaba
+45,South Mugirango
+46,Borabu
+46,Manga
+46,Masaba North
+46,Nyamira North
+46,Nyamira South
+47,Dagoretti North
+47,Dagoretti South
+47,Embakasi Central
+47,Embakasi East
+47,Embakasi North
+47,Embakasi South
+47,Embakasi West
+47,Kamukunji
+47,Kasarani
+47,Kibra
+47,Lang'ata
+47,Makadara
+47,Mathare
+47,Roysambu
+47,Ruaraka
+47,Starehe
+47,Westlands

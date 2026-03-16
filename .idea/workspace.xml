@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9d2426d3-6b8b-4dc5-b0cd-936f15c9d850" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="39eY82Xnv5KPgl1CApSHpC5Jyif" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;ai.playground.ignore.import.keys.banner.in.settings&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;//wsl$/FedoraLinux-43/home/agessah/workspace/python/cancer-care/app/db/seeders&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;settings.editor.splitter.proportion&quot;: &quot;0.32892057&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;,
+      &quot;bigquery&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="\\wsl$\FedoraLinux-43\home\agessah\workspace\python\cancer-care\app\db\seeders" />
+      <recent name="\\wsl$\FedoraLinux-43\home\agessah\workspace\python\cancer-care\app\schemas" />
+      <recent name="\\wsl$\FedoraLinux-43\home\agessah\workspace\python\cancer-care\app\api\v1\routes" />
+      <recent name="\\wsl$\FedoraLinux-43\home\agessah\workspace\python\cancer-care\app\services" />
+      <recent name="\\wsl$\FedoraLinux-43\home\agessah\workspace\python\cancer-care\app\repositories" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="\\wsl$\FedoraLinux-43\home\agessah\workspace\python\cancer-care" />
+      <recent name="\\wsl$\FedoraLinux-43\home\agessah\workspace\python\cancer-care\app" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="cancer-care" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="3.14 WSL (FedoraLinux-43): (/home/agessah/.virtualenvs/cancer-care/bin/python)" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-PY-253.31033.139" />
+        <option value="bundled-python-sdk-2653e85de345-6d6dccd035ac-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-253.31033.139" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9d2426d3-6b8b-4dc5-b0cd-936f15c9d850" name="Changes" comment="" />
+      <created>1771057842033</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1771057842033</updated>
+      <workItem from="1771057844201" duration="2963000" />
+      <workItem from="1771060867891" duration="3545000" />
+      <workItem from="1771069560139" duration="4945000" />
+      <workItem from="1771095461235" duration="4103000" />
+      <workItem from="1771145267494" duration="1644000" />
+      <workItem from="1771166366466" duration="21850000" />
+      <workItem from="1771225182571" duration="4115000" />
+      <workItem from="1771236992391" duration="2766000" />
+      <workItem from="1771268029905" duration="2265000" />
+      <workItem from="1771272956608" duration="1196000" />
+      <workItem from="1771308313518" duration="10000" />
+      <workItem from="1771349342914" duration="171000" />
+      <workItem from="1771349538426" duration="11460000" />
+      <workItem from="1771390009857" duration="4004000" />
+      <workItem from="1771432853197" duration="2929000" />
+      <workItem from="1771673857521" duration="862000" />
+      <workItem from="1771694360577" duration="2174000" />
+      <workItem from="1771768984334" duration="2291000" />
+      <workItem from="1771772177981" duration="3518000" />
+      <workItem from="1771776709846" duration="16392000" />
+      <workItem from="1771865674391" duration="1998000" />
+      <workItem from="1771868344703" duration="13557000" />
+      <workItem from="1771953911384" duration="6389000" />
+      <workItem from="1771961118388" duration="1903000" />
+      <workItem from="1771963082360" duration="2108000" />
+      <workItem from="1771965307439" duration="1319000" />
+      <workItem from="1772085811235" duration="2790000" />
+      <workItem from="1772272692196" duration="2403000" />
+      <workItem from="1772284352823" duration="990000" />
+      <workItem from="1772300670167" duration="393000" />
+      <workItem from="1772301326283" duration="545000" />
+      <workItem from="1772383659708" duration="411000" />
+      <workItem from="1772457423585" duration="6000" />
+      <workItem from="1772543768483" duration="26000" />
+      <workItem from="1773422200436" duration="2401000" />
+      <workItem from="1773643076041" duration="344000" />
+      <workItem from="1773647242624" duration="1245000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app/db/events.py</url>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app/db/models/gender.py</url>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app/repositories/sub_county.py</url>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/cancer_care$main.coverage" NAME="main Coverage Results" MODIFIED="1771961959241" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>
