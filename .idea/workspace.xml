@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d2426d3-6b8b-4dc5-b0cd-936f15c9d850" name="Changes" comment="" />
+    <list default="true" id="9d2426d3-6b8b-4dc5-b0cd-936f15c9d850" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alembic/versions/b420cc27a864_initialize.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db/seed.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/seed.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db/seeders/county.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/seeders/county.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db/seeders/gender.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/seeders/gender.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db/seeders/subcounty.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/seeders/subcounty.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,6 +24,9 @@
         <option value="Python Script" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
@@ -34,8 +45,10 @@
     &quot;Python.main.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
     &quot;ai.playground.ignore.import.keys.banner.in.settings&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;last_opened_file_path&quot;: &quot;//wsl$/FedoraLinux-43/home/agessah/workspace/python/cancer-care/app/db/seeders&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -146,6 +159,10 @@
       <workItem from="1773422200436" duration="2401000" />
       <workItem from="1773643076041" duration="344000" />
       <workItem from="1773647242624" duration="1245000" />
+      <workItem from="1773651084181" duration="510000" />
+      <workItem from="1773653080243" duration="2390000" />
+      <workItem from="1773662988807" duration="1219000" />
+      <workItem from="1773728793215" duration="3947000" />
     </task>
     <servers />
   </component>

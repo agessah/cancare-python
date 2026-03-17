@@ -2,6 +2,7 @@ import csv
 
 from app.db.models import Gender
 from app.db.seeders.seeder import Seeder
+from sqlalchemy.dialects.postgresql import insert
 
 class GenderSeeder(Seeder):
     def __init__(self, file_path: str):
@@ -19,6 +20,12 @@ class GenderSeeder(Seeder):
                 for stripped in [{k.strip(): v for k, v in row.items()}]
             ]
 
-        session.bulk_insert_mappings(Gender, data)
+        #session.bulk_insert_mappings(Gender, data)
+        #session.commit()
+
+        stmt = insert(Gender).values(data)
+        stmt = stmt.on_conflict_do_nothing(index_elements=["name"])
+        session.execute(stmt)
         session.commit()
+
         print(f"Seeded {len(data)} genders.")

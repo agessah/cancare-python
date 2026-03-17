@@ -1,3 +1,6 @@
+from dotenv import load_dotenv
+load_dotenv()
+
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from app.db.base import Base
@@ -6,7 +9,9 @@ from app.db.seeders.gender import GenderSeeder
 from app.db.seeders.subcounty import SubCountySeeder
 from app.db.seeders.user import UserSeeder
 
-engine = create_engine("postgresql+psycopg2://postgres:9128@localhost:5432/cancer-care", echo=True)
+import os
+db_url = os.getenv("DATABASE_URL", "").replace("asyncpg", "psycopg2")
+engine = create_engine(db_url, echo=True)
 SessionLocal = sessionmaker(bind=engine)
 
 Base.metadata.create_all(engine)
