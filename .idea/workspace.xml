@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9d2426d3-6b8b-4dc5-b0cd-936f15c9d850" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/alembic.ini" beforeDir="false" afterPath="$PROJECT_DIR$/alembic.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/alembic/env.py" beforeDir="false" afterPath="$PROJECT_DIR$/alembic/env.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/alembic/versions/98f1c17455e3_initialize.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemas/encounter_assessment.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/encounter_assessment.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +43,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "ai.playground.ignore.import.keys.banner.in.settings": "true",
-    "git-widget-placeholder": "patients",
+    "git-widget-placeholder": "master",
     "last_opened_file_path": "//wsl$/FedoraLinux-43/home/agessah/workspace/python/cancer-care/app/db/seeders",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",

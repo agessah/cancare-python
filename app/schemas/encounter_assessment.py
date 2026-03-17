@@ -66,8 +66,8 @@ class EncounterAssessmentUpdate(BaseModel):
     late_first_pregnancy: bool | None = None
     dense_tissue: bool | None = None
     notes: str | None = None
-    risk_score: decimal.Decimal | None = None
-
+    risk_score: Decimal | None = None
 
 EncounterAssessmentResponse.model_rebuild()
 EncounterAssessmentPagedResponse.model_rebuild()
+EncounterAssessmentUpdate.model_rebuild()
