@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d2426d3-6b8b-4dc5-b0cd-936f15c9d850" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/alembic/versions/b420cc27a864_initialize.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/db/seed.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/seed.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/db/seeders/county.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/seeders/county.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/db/seeders/gender.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/seeders/gender.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/db/seeders/subcounty.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/seeders/subcounty.py" afterDir="false" />
-    </list>
+    <list default="true" id="9d2426d3-6b8b-4dc5-b0cd-936f15c9d850" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -162,7 +154,7 @@
       <workItem from="1773651084181" duration="510000" />
       <workItem from="1773653080243" duration="2390000" />
       <workItem from="1773662988807" duration="1219000" />
-      <workItem from="1773728793215" duration="3947000" />
+      <workItem from="1773728793215" duration="4314000" />
     </task>
     <servers />
   </component>
