@@ -12,3 +12,8 @@ python-multipart
 aiosmtplib
 email-validator
 argon2-cffi
+numpy
+joblib
+shap
+scikit-learn
+pandas
