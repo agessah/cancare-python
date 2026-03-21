@@ -1,79 +1,124 @@
 import os
-from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
 import numpy as np
 import joblib
 import shap
+from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel, Field
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-# Load trained model
-model_path = os.path.join(BASE_DIR, "rf_model.pkl")
-rf = joblib.load(model_path)
-features_path = os.path.join(BASE_DIR, "features.pkl")
-feature_names = joblib.load(features_path)
+# Load artifacts
+rf = joblib.load(os.path.join(BASE_DIR, "rf_model.pkl"))
+feature_names = joblib.load(os.path.join(BASE_DIR, "features.pkl"))
+encoder = joblib.load(os.path.join(BASE_DIR, "label_encoder.pkl"))
 
-# SHAP explainer
+# SHAP explainer (initialize once)
 explainer = shap.TreeExplainer(rf)
 
-# FastAPI app
+# App
 app = FastAPI(title="Breast Cancer Risk Prediction API")
 
-# Input schema
+# -------------------------
+# Input Schema (validated)
+# -------------------------
 class InputData(BaseModel):
-    Age: int
-    Breast_Lump: int
-    Nipple_Discharge: int
-    Skin_Changes: int
-    Nipple_Retraction: int
-    Redness_Scaling: int
-    Family_History: int
-    Age_Above_50: int
-    Never_Pregnant: int
-    Late_Menopause: int
-    Lifestyle_Risk: int
+    Age: int = Field(..., ge=0, le=120)
+    Breast_Lump: int = Field(..., ge=0, le=1)
+    Nipple_Discharge: int = Field(..., ge=0, le=1)
+    Skin_Changes: int = Field(..., ge=0, le=1)
+    Nipple_Retraction: int = Field(..., ge=0, le=1)
+    Redness_Scaling: int = Field(..., ge=0, le=1)
+    Family_History: int = Field(..., ge=0, le=1)
+    Age_Above_50: int = Field(..., ge=0, le=1)
+    Never_Pregnant: int = Field(..., ge=0, le=1)
+    Late_Menopause: int = Field(..., ge=0, le=1)
+    Lifestyle_Risk: int = Field(..., ge=0, le=1)
 
+# -------------------------
+# Helper: Build input array
+# -------------------------
+def build_input_array(data: InputData):
+    return np.array([[
+        data.Age,
+        data.Breast_Lump,
+        data.Nipple_Discharge,
+        data.Skin_Changes,
+        data.Nipple_Retraction,
+        data.Redness_Scaling,
+        data.Family_History,
+        data.Age_Above_50,
+        data.Never_Pregnant,
+        data.Late_Menopause,
+        data.Lifestyle_Risk
+    ]], dtype=float)
+
+# -------------------------
+# Helper: SHAP extraction
+# -------------------------
+def get_contributions(shap_values, pred_class):
+    if isinstance(shap_values, list):
+        contributions = shap_values[int(pred_class)][0]
+    elif hasattr(shap_values, "shape") and len(shap_values.shape) == 3:
+        contributions = shap_values[0, int(pred_class), :]
+    else:
+        contributions = shap_values[0]
+
+    return np.array(contributions).flatten()
+
+# -------------------------
+# Helper: Top features
+# -------------------------
+def get_top_features(contributions):
+    top_indices = np.argsort(np.abs(contributions))[-5:]
+
+    return [
+        {
+            "feature": feature_names[int(i)],
+            "impact": float(contributions[int(i)])
+        }
+        for i in reversed(top_indices)
+    ]
+
+# -------------------------
+# Helper: Risk interpretation
+# -------------------------
+def interpret_risk(prob):
+    if prob > 0.75:
+        return "High confidence ⚠️"
+    elif prob > 0.5:
+        return "Moderate confidence"
+    else:
+        return "Low confidence"
+
+# -------------------------
+# Prediction Endpoint
+# -------------------------
 @app.post("/predict")
 def predict(data: InputData):
     try:
-        # Convert input to numpy array
-        arr = np.array([[
-            data.Age,
-            data.Breast_Lump,
-            data.Nipple_Discharge,
-            data.Skin_Changes,
-            data.Nipple_Retraction,
-            data.Redness_Scaling,
-            data.Family_History,
-            data.Age_Above_50,
-            data.Never_Pregnant,
-            data.Late_Menopause,
-            data.Lifestyle_Risk
-        ]])
+        arr = build_input_array(data)
 
         # Prediction
-        pred_class = rf.predict(arr)[0]
-        pred_prob = rf.predict_proba(arr)[0][pred_class]
+        pred_class = int(rf.predict(arr)[0])
 
-        # SHAP explanation
+        probs = rf.predict_proba(arr)[0]
+        pred_prob = float(probs[pred_class])
+
+        # Decode label
+        risk_level = encoder.inverse_transform([pred_class])[0]
+
+        # SHAP
         shap_values = explainer.shap_values(arr)
-        contributions = shap_values[pred_class][0]
+        contributions = get_contributions(shap_values, pred_class)
 
-        # Top 5 features
-        top_indices = np.argsort(np.abs(contributions))[-5:]
-        top_features = [
-            {"feature": feature_names[i], "impact": float(contributions[i])}
-            for i in reversed(top_indices)
-        ]
-
-        # Map back numeric class to string
-        risk_mapping = {0: "Low", 1: "Medium", 2: "High"}
-        risk_level = risk_mapping.get(pred_class, "Unknown")
+        # Top features
+        top_features = get_top_features(contributions)
 
         return {
-            "prediction_class": int(pred_class),
+            "prediction_class": pred_class,
             "risk_level": risk_level,
-            "probability": float(pred_prob),
+            "probability": pred_prob,
+            "confidence": interpret_risk(pred_prob),
             "top_features": top_features
         }
 

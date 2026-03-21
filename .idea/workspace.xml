@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d2426d3-6b8b-4dc5-b0cd-936f15c9d850" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/ai/generate_dataset.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/ai/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/ai/train_rf.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/csv-editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/csv-editor.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/ai/main_.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/ai/train_rf_.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/ai/validate_dataset.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ai/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/ai/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ai/train_rf.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/ai/train_rf.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +165,9 @@
       <workItem from="1773728793215" duration="12542000" />
       <workItem from="1773934141847" duration="453000" />
       <workItem from="1773986756625" duration="12902000" />
-      <workItem from="1774032456825" duration="1629000" />
+      <workItem from="1774032456825" duration="6428000" />
+      <workItem from="1774076199689" duration="3075000" />
+      <workItem from="1774100328081" duration="3355000" />
     </task>
     <servers />
   </component>
