@@ -1,7 +1,6 @@
-from typing import List
+from app.repositories import SubCountyRepository
+from fastapi import HTTPException
 
-from app.db.models import SubCounty
-from app.repositories.sub_county import SubCountyRepository
 
 class SubCountyService:
     def __init__(self, repo: SubCountyRepository):
@@ -23,8 +22,8 @@ class SubCountyService:
             filters=filters
         )
 
-    async def show(self, id: int):
-        resource = await self.repo.get(id)
+    async def show(self, resource_id: int):
+        resource = await self.repo.get(resource_id)
 
         if not resource:
             raise HTTPException(status_code=404, detail="Sub-County not found!")

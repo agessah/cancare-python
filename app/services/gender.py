@@ -1,4 +1,4 @@
-from app.repositories.gender import GenderRepository
+from app.repositories import GenderRepository
 
 class GenderService:
     def __init__(self, repo: GenderRepository):

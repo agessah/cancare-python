@@ -5,12 +5,95 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d2426d3-6b8b-4dc5-b0cd-936f15c9d850" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/ai/main_.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/ai/train_rf_.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/ai/validate_dataset.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/api/v1/routes/document_category.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/api/v1/routes/follow_up.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/api/v1/routes/follow_up_status.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/api/v1/routes/level.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/api/v1/routes/media_type.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/api/v1/routes/medical_facility.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/api/v1/routes/referral.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/db/data/document_categories.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/db/data/follow_up_statuses.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/db/data/levels.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/db/data/media_types.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/db/data/sha_public_hospitals.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/db/models/document_category.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/db/models/follow_up.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/db/models/follow_up_status.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/db/models/level.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/db/models/media_type.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/db/models/medical_facility.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/db/models/referral.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/db/seeders/document_category.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/db/seeders/follow_up_status.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/db/seeders/level.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/db/seeders/media_type.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/db/seeders/medical_facility.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/repositories/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/repositories/document_category.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/repositories/follow_up.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/repositories/follow_up_status.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/repositories/level.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/repositories/media_type.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/repositories/medical_facility.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/repositories/referral.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/schemas/document_category.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/schemas/follow_up.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/schemas/follow_up_status.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/schemas/level.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/schemas/media_type.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/schemas/medical_facility.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/schemas/referral.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/services/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/services/document_category.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/services/email_service.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/services/follow_up.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/services/follow_up_status.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/services/level.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/services/media_type.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/services/medical_facility.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/services/referral.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/email/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/email/otp.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/cancer-care.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/cancer-care.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/csv-editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/csv-editor.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9323dfc5-6826-4624-9dd2-83fb2be192bc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9323dfc5-6826-4624-9dd2-83fb2be192bc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ai/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/ai/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ai/train_rf.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/ai/train_rf.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alembic.ini" beforeDir="false" afterPath="$PROJECT_DIR$/alembic.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alembic/versions/e1f3a58978ea_initialize.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/deps.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/deps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/v1/routes/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/routes/auth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/v1/routes/county.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/routes/county.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/v1/routes/encounter_assessment.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/routes/encounter_assessment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/v1/routes/gender.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/routes/gender.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/v1/routes/patient.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/routes/patient.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/v1/routes/sub_county.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/routes/sub_county.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/core/email2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/core/security.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/security.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/models/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db/models/encounter_assessment.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/models/encounter_assessment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db/models/patient.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/models/patient.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/models/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db/seed.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/seed.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db/seeders/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/seeders/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/repositories/county.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/county.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/repositories/encounter_assessment.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/encounter_assessment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/repositories/patient.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/patient.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/repositories/sub_county.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/sub_county.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/repositories/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemas/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/auth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemas/encounter_assessment.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/encounter_assessment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemas/patient.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/patient.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/auth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/county.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/county.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/encounter_assessment.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/encounter_assessment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/gender.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/gender.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/patient.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/patient.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/sub_county.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/sub_county.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,8 +130,9 @@
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
     &quot;ai.playground.ignore.import.keys.banner.in.settings&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;//wsl$/FedoraLinux-43/home/agessah/workspace/python/cancer-care/app/ai&quot;,
+    &quot;last_opened_file_path&quot;: &quot;//wsl$/FedoraLinux-43/home/agessah/workspace/python/cancer-care/app/api/v1/routes&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -68,11 +152,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="\\wsl$\FedoraLinux-43\home\agessah\workspace\python\cancer-care\app\ai" />
-      <recent name="\\wsl$\FedoraLinux-43\home\agessah\workspace\python\cancer-care\app\db\seeders" />
-      <recent name="\\wsl$\FedoraLinux-43\home\agessah\workspace\python\cancer-care\app\schemas" />
       <recent name="\\wsl$\FedoraLinux-43\home\agessah\workspace\python\cancer-care\app\api\v1\routes" />
       <recent name="\\wsl$\FedoraLinux-43\home\agessah\workspace\python\cancer-care\app\services" />
+      <recent name="\\wsl$\FedoraLinux-43\home\agessah\workspace\python\cancer-care\app\schemas" />
+      <recent name="\\wsl$\FedoraLinux-43\home\agessah\workspace\python\cancer-care\app\repositories" />
+      <recent name="\\wsl$\FedoraLinux-43\home\agessah\workspace\python\cancer-care\app\db\seeders" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="\\wsl$\FedoraLinux-43\home\agessah\workspace\python\cancer-care\app\ai" />
@@ -95,6 +179,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="RUN_TOOL" value="" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
@@ -110,8 +195,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-PY-253.31033.139" />
-        <option value="bundled-python-sdk-2653e85de345-6d6dccd035ac-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-253.31033.139" />
+        <option value="bundled-js-predefined-d6986cc7102b-3bd3a6803838-JavaScript-PY-261.22158.340" />
+        <option value="bundled-python-sdk-b63d5a1f7c97-b61e75351b1f-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-261.22158.340" />
       </set>
     </attachedChunks>
   </component>
@@ -168,6 +253,18 @@
       <workItem from="1774032456825" duration="6428000" />
       <workItem from="1774076199689" duration="3075000" />
       <workItem from="1774100328081" duration="3355000" />
+      <workItem from="1774115724717" duration="2452000" />
+      <workItem from="1774966466158" duration="178000" />
+      <workItem from="1775154249652" duration="2004000" />
+      <workItem from="1775188707816" duration="5099000" />
+      <workItem from="1775234070913" duration="13021000" />
+      <workItem from="1775254468518" duration="866000" />
+      <workItem from="1775321712881" duration="12453000" />
+      <workItem from="1775366022522" duration="8731000" />
+      <workItem from="1775407498993" duration="4509000" />
+      <workItem from="1775453832478" duration="21431000" />
+      <workItem from="1775478809388" duration="3137000" />
+      <workItem from="1775482005816" duration="1372000" />
     </task>
     <servers />
   </component>
@@ -186,7 +283,7 @@
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/repositories/sub_county.py</url>
+          <url>file://$PROJECT_DIR$/app/main.py</url>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>

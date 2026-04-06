@@ -32,10 +32,12 @@ class EncounterAssessmentRepository(BaseRepository[EncounterAssessment]):
             stmt = apply_filters(stmt, EncounterAssessment, filters)
 
         # Search (only allowed fields)
-        stmt = apply_search(stmt, EncounterAssessment, search, ["notes"])
+        if search is not None:
+            stmt = apply_search(stmt, EncounterAssessment, search, ["notes"])
 
         # Sorting
-        stmt = apply_sort(stmt, EncounterAssessment, sort)
+        if sort is not None:
+            stmt = apply_sort(stmt, EncounterAssessment, sort)
 
         total = 0
 

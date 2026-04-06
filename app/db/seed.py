@@ -3,9 +3,15 @@ load_dotenv()
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+
 from app.db.base import Base
 from app.db.seeders.county import CountySeeder
 from app.db.seeders.gender import GenderSeeder
+from app.db.seeders.level import LevelSeeder
+from app.db.seeders.document_category import DocumentCategorySeeder
+from app.db.seeders.media_type import MediaTypeSeeder
+from app.db.seeders.follow_up_status import FollowUpStatusSeeder
+from app.db.seeders.medical_facility import MedicalFacilitySeeder
 from app.db.seeders.subcounty import SubCountySeeder
 from app.db.seeders.user import UserSeeder
 
@@ -21,6 +27,11 @@ seeders = [
     CountySeeder("app/db/data/counties.csv"),
     SubCountySeeder("app/db/data/subcounties.csv"),
     GenderSeeder("app/db/data/genders.csv"),
+    LevelSeeder("app/db/data/levels.csv"),
+    FollowUpStatusSeeder("app/db/data/follow_up_statuses.csv"),
+    DocumentCategorySeeder("app/db/data/document_categories.csv"),
+    MediaTypeSeeder("app/db/data/media_types.csv"),
+    MedicalFacilitySeeder("app/db/data/sha_public_hospitals.xlsx"),
     UserSeeder()
 ]
 

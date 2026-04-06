@@ -1,11 +1,7 @@
-from typing import List
-
-from sqlalchemy import select, func
-from sqlalchemy.ext.asyncio import AsyncSession
-
 from app.db.models import SubCounty
 from app.repositories.base import BaseRepository
 from app.utils.query_builder import apply_filters, apply_search, apply_sort
+from sqlalchemy import select, func
 
 
 class SubCountyRepository(BaseRepository[SubCounty]):
@@ -25,18 +21,21 @@ class SubCountyRepository(BaseRepository[SubCounty]):
 
         # Auto soft-delete filter
         if hasattr(SubCounty, "deleted_at"):
-            stmt = stmt.where(SubCounty.deleted_at == None)
+            stmt = stmt.where(SubCounty.deleted_at is None)
 
         # Dynamic filtering
         if filters:
             stmt = apply_filters(stmt, SubCounty, filters)
 
         # Search (only allowed fields)
-        stmt = apply_search(stmt, SubCounty, search, ["name"])
+        if search is not None:
+            stmt = apply_search(stmt, SubCounty, search, ["name"])
 
         # Sorting
-        stmt = apply_sort(stmt, SubCounty, sort)
+        if sort is not None:
+            stmt = apply_sort(stmt, SubCounty, sort)
 
+        total = 0
         if skip is not None and limit is not None:
             # Count total
             count_stmt = select(func.count()).select_from(stmt.subquery())

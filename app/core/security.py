@@ -66,3 +66,6 @@ async def get_current_user(
     current_user_id.set(user.id)
 
     return user
+
+def generate_otp():
+    return f"{secrets.randbelow(1000000):06}"

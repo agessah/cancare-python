@@ -1,10 +1,8 @@
-from sqlalchemy import select, func
-from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy.orm import selectinload
-
 from app.db.models import Patient
 from app.repositories.base import BaseRepository
 from app.utils.query_builder import apply_filters, apply_search, apply_sort
+from sqlalchemy import select, func
+from sqlalchemy.orm import selectinload
 
 
 class PatientRepository(BaseRepository[Patient]):
@@ -41,11 +39,14 @@ class PatientRepository(BaseRepository[Patient]):
             stmt = apply_filters(stmt, Patient, filters)
 
         # Search (only allowed fields)
-        stmt = apply_search(stmt, Patient, search, ["name", "phone", "location"])
+        if search is not None:
+            stmt = apply_search(stmt, Patient, search, ["name", "phone", "location"])
 
         # Sorting
-        stmt = apply_sort(stmt, Patient, sort)
+        if sort is not None:
+            stmt = apply_sort(stmt, Patient, sort)
 
+        total = 0
         if skip is not None and limit is not None:
             # Count total
             count_stmt = select(func.count()).select_from(stmt.subquery())

@@ -1,7 +1,6 @@
-from typing import List
+from app.repositories import CountyRepository
+from fastapi import HTTPException
 
-from app.db.models import County
-from app.repositories.county import CountyRepository
 
 class CountyService:
     def __init__(self, repo: CountyRepository):
@@ -21,8 +20,8 @@ class CountyService:
             sort=sort
         )
 
-    async def show(self, id: int):
-        resource = await self.repo.get(id)
+    async def show(self, resource_id: int):
+        resource = await self.repo.get(resource_id)
 
         if not resource:
             raise HTTPException(status_code=404, detail="County not found!")

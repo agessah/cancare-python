@@ -3,8 +3,13 @@ from typing import List
 from fastapi import APIRouter, Depends, Query
 
 from app.api.deps import get_encounter_assessment_service
-from app.schemas.encounter_assessment import EncounterAssessmentResponse, EncounterAssessmentPagedResponse, EncounterAssessmentCreate, EncounterAssessmentUpdate
-from app.services.encounter_assessment import EncounterAssessmentService
+from app.schemas.encounter_assessment import (
+    EncounterAssessmentResponse,
+    EncounterAssessmentPagedResponse,
+    EncounterAssessmentCreate,
+    EncounterAssessmentUpdate
+)
+from app.services import EncounterAssessmentService
 from app.core.security import get_current_user
 
 router = APIRouter(

@@ -7,6 +7,7 @@ class RegisterRequest(BaseModel):
     password: str
 
 class ActivateRequest(BaseModel):
+    channel: str
     token: str
 
 class LoginRequest(BaseModel):
@@ -14,8 +15,10 @@ class LoginRequest(BaseModel):
     password: str
 
 class ForgotRequest(BaseModel):
+    channel: str
     email: str
 
 class ResetRequest(BaseModel):
+    channel: str
     token: str
     password: str

@@ -12,37 +12,45 @@ class EncounterAssessment(AuditMixin, SoftDeleteMixin, Base, ActiveMixin):
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
     patient_id: Mapped[int] = mapped_column(ForeignKey("patients.id"), nullable=False)
+
     painless_lump: Mapped[bool] = mapped_column(
-        Boolean, default=False, server_default="false", nullable=False
-    )
-    persistent_pain: Mapped[bool] = mapped_column(
-        Boolean, default=False, server_default="false", nullable=False
-    )
-    skin_dimpling: Mapped[bool] = mapped_column(
         Boolean, default=False, server_default="false", nullable=False
     )
     nipple_discharge: Mapped[bool] = mapped_column(
         Boolean, default=False, server_default="false", nullable=False
     )
+    skin_dimpling: Mapped[bool] = mapped_column(
+        Boolean, default=False, server_default="false", nullable=False
+    )
+    nipple_retraction: Mapped[bool] = mapped_column(
+        Boolean, default=False, server_default="false", nullable=False
+    )
+    redness: Mapped[bool] = mapped_column(
+        Boolean, default=False, server_default="false", nullable=False
+    )
+
     family_history: Mapped[bool] = mapped_column(
         Boolean, default=False, server_default="false", nullable=False
     )
+
     above_fifty: Mapped[bool] = mapped_column(
         Boolean, default=False, server_default="false", nullable=False
     )
-    post_menopausal: Mapped[bool] = mapped_column(
+    never_been_pregnant: Mapped[bool] = mapped_column(
+        Boolean, default=False, server_default="false", nullable=False
+    )
+    late_menopause: Mapped[bool] = mapped_column(
+        Boolean, default=False, server_default="false", nullable=False
+    )
+    alcohol_consumption: Mapped[bool] = mapped_column(
         Boolean, default=False, server_default="false", nullable=False
     )
     obesity: Mapped[bool] = mapped_column(
         Boolean, default=False, server_default="false", nullable=False
     )
-    late_first_pregnancy: Mapped[bool] = mapped_column(
-        Boolean, default=False, server_default="false", nullable=False
-    )
-    dense_tissue: Mapped[bool] = mapped_column(
-        Boolean, default=False, server_default="false", nullable=False
-    )
+
     notes: Mapped[str | None] = mapped_column(Text, nullable=True)
+
     risk_score: Mapped[Decimal | None] = mapped_column(
         Numeric(5, 2),  # up to 999.99
         nullable=True

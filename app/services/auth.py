@@ -1,23 +1,25 @@
+from app.services.email_service import EmailService
 from fastapi import HTTPException
 from jose import JWTError
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.core.email2 import send_token_email
 from app.core.security import (
     hash_password,
     verify_password,
     create_access_token,
     create_token,
-    decode_token
+    decode_token, generate_otp
 )
 from app.db.models import User
 from app.repositories.user import UserRepository
 from app.schemas.auth import RegisterRequest
 
-
 class AuthService:
+    def __init__(self, email_service: EmailService):
+        self.email_service = email_service
+
     @staticmethod
-    async def register(db: AsyncSession, payload: RegisterRequest):
+    async def register(es: EmailService, db: AsyncSession, payload: RegisterRequest):
         phone_exists = await UserRepository.get_by_phone(db, payload.phone)
         if phone_exists:
             raise HTTPException(400, "Phone number already exists!")
@@ -26,22 +28,23 @@ class AuthService:
         if email_exists:
             raise HTTPException(400, "Email address already exists!")
 
+        otp = generate_otp()
+
         user = User(
             name=payload.name,
             phone=payload.phone,
             email=payload.email,
             password=hash_password(payload.password),
-            activation_token=None,
+            token=hash_password(otp),
             active=False
         )
 
         await UserRepository.create(db, user)
         await db.refresh(user)
+        await es.send_otp(user.email, otp)
 
-        token = create_token(user.id, "activation")
-
-        # Send activation email
-        await send_token_email(user.email, token, "activation")
+        #token = create_token(user.id, "activation")
+        #await send_link_email(user.email, token, "activation")
 
         return { "message": "User created. Please check your email to activate your account." }
     
@@ -66,6 +69,12 @@ class AuthService:
         if user.active:
             return { "message": "Account already activated!" }
 
+
+
+
+
+
+
         user.active = True
         await UserRepository.commit(db)
 
@@ -84,7 +93,7 @@ class AuthService:
         token = create_token(user.id, "reset")
 
         # Send activation email
-        await send_token_email(user.email, token, "reset")
+        ##########await send_token_email(user.email, token, "reset")
 
         return { "message": "Password reset email sent. Please check your email to reset your password." }
     

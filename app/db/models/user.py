@@ -12,5 +12,4 @@ class User(AuditMixin, Base, ActiveMixin):
     email: Mapped[str] = mapped_column(String(255), unique=True, index=True, nullable=False)
     phone: Mapped[str] = mapped_column(String(20), unique=True, index=True, nullable=False)
     password: Mapped[str] = mapped_column(String(255), nullable=False)
-    activation_token: Mapped[str | None] = mapped_column(String(255), nullable=True)
-    reset_token: Mapped[str | None] = mapped_column(String(255), nullable=True)
+    token: Mapped[str | None] = mapped_column(String(255), nullable=True)

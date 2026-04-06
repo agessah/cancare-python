@@ -1,10 +1,7 @@
-from typing import List
-
-from fastapi import APIRouter, Depends, Query
-
 from app.api.deps import get_county_service
 from app.schemas.county import CountyResponse, CountyPagedResponse
-from app.services.county import CountyService
+from app.services import CountyService
+from fastapi import APIRouter, Depends, Query
 
 router = APIRouter(prefix="/counties", tags=["Counties"])
 

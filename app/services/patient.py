@@ -1,5 +1,6 @@
+from app.repositories import PatientRepository
 from fastapi import HTTPException
-from app.repositories.patient import PatientRepository
+
 
 class PatientService:
     def __init__(self, repo: PatientRepository):

@@ -5,8 +5,8 @@ from app.db.models import User
 
 class UserRepository:
     @staticmethod
-    async def get_by_id(db: AsyncSession, id: int) -> User | None:
-        result = await db.execute(select(User).where(User.id == id))
+    async def get_by_id(db: AsyncSession, resource_id: int) -> User | None:
+        result = await db.execute(select(User).where(User.id == resource_id))
         return result.scalar_one_or_none()
 
     @staticmethod

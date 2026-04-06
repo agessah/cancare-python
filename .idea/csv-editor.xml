@@ -17,7 +17,35 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\app\db\data\document_categories.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\app\db\data\follow_up_statuses.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\app\db\data\genders.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\app\db\data\levels.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\app\db\data\media_types.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

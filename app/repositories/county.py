@@ -1,11 +1,7 @@
-from typing import List
-
-from sqlalchemy import select, func
-from sqlalchemy.ext.asyncio import AsyncSession
-
 from app.db.models import County
 from app.repositories.base import BaseRepository
-from app.utils.query_builder import apply_filters, apply_search, apply_sort
+from app.utils.query_builder import apply_search, apply_sort
+from sqlalchemy import select, func
 
 
 class CountyRepository(BaseRepository[County]):
@@ -24,14 +20,17 @@ class CountyRepository(BaseRepository[County]):
 
         # Auto soft-delete filter
         if hasattr(County, "deleted_at"):
-            stmt = stmt.where(County.deleted_at == None)
+            stmt = stmt.where(County.deleted_at is None)
 
         # Search (only allowed fields)
-        stmt = apply_search(stmt, County, search, ["name", "town"])
+        if search is not None:
+            stmt = apply_search(stmt, County, search, ["name", "town"])
 
         # Sorting
-        stmt = apply_sort(stmt, County, sort)
+        if sort is not None:
+            stmt = apply_sort(stmt, County, sort)
 
+        total = 0
         if skip is not None and limit is not None:
             # Count total
             count_stmt = select(func.count()).select_from(stmt.subquery())
@@ -73,14 +72,16 @@ class CountyRepository(BaseRepository[County]):
             #stmt = apply_filters(stmt, County, filters)
 
         # Search (only allowed fields)
-        stmt = apply_search(stmt, County, search, ["name"])
+        if search is not None:
+            stmt = apply_search(stmt, County, search, ["name"])
 
         # Sorting
-        stmt = apply_sort(stmt, County, sort)
+        if sort is not None:
+            stmt = apply_sort(stmt, County, sort)
 
         # Count total
-        count_stmt = select(func.count()).select_from(stmt.subquery())
-        total = await self.db.scalar(count_stmt)
+        #count_stmt = select(func.count()).select_from(stmt.subquery())
+        #total = await self.db.scalar(count_stmt)
 
         # Pagination
         #stmt = stmt.offset(skip).limit(limit)

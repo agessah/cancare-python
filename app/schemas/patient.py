@@ -2,11 +2,11 @@ from __future__ import annotations
 from datetime import date
 from typing import List
 
+from app.schemas.sub_county import SubCountyResponse
+from app.schemas.gender import GenderResponse
 from pydantic import BaseModel
 
 from app.schemas.county import CountyResponse
-from app.schemas.gender import GenderResponse
-from app.schemas.sub_county import SubCountyResponse
 
 class PatientResponse(BaseModel):
     id: int
@@ -29,10 +29,6 @@ class PatientPagedResponse(BaseModel):
 
     class Config:
         from_attributes = True
-
-
-
-
 
 
 class PatientBase(BaseModel):

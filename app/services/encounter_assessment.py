@@ -1,6 +1,6 @@
 from fastapi import HTTPException
 
-from app.repositories.encounter_assessment import EncounterAssessmentRepository
+from app.repositories import EncounterAssessmentRepository
 
 
 class EncounterAssessmentService:

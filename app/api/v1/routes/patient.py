@@ -4,7 +4,7 @@ from fastapi import APIRouter, Depends, Query
 
 from app.api.deps import get_patient_service
 from app.schemas.patient import PatientResponse, PatientPagedResponse, PatientCreate, PatientUpdate
-from app.services.patient import PatientService
+from app.services import PatientService
 from app.core.security import get_current_user
 
 router = APIRouter(
