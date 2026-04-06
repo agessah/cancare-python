@@ -11,30 +11,34 @@ router = APIRouter(prefix="/auth", tags=["Auth"])
 
 @router.post("/register")
 async def register(
-        payload: RegisterRequest,
+        request: RegisterRequest,
         db: AsyncSession = Depends(get_db),
         es: EmailService = Depends(get_email_service)
 ):
-    return await AuthService.register(es, db, payload)
+    return await AuthService.register(es, db, request)
 
 
 @router.post("/activate-account")
-async def activate_account(payload: ActivateRequest, db: AsyncSession = Depends(get_db)):
-    return await AuthService.activate_account(db, payload.token)
+async def activate_account(request: ActivateRequest, db: AsyncSession = Depends(get_db)):
+    return await AuthService.activate_account(db, request)
 
 
 @router.post("/forgot-password")
-async def forgot_password(payload: ForgotRequest, db: AsyncSession = Depends(get_db)):
-    return await AuthService.forgot_password(db, payload.email)
+async def forgot_password(
+        request: ForgotRequest,
+        db: AsyncSession = Depends(get_db),
+        es: EmailService = Depends(get_email_service)
+):
+    return await AuthService.forgot_password(es, db, request)
 
 @router.post("/reset-password")
 async def reset_password(
-    payload: ResetRequest,
+    request: ResetRequest,
     db: AsyncSession = Depends(get_db)
 ):
-    return await AuthService.reset_password(db,payload. token, payload.password)
+    return await AuthService.reset_password(db, request)
 
 
 @router.post("/login")
-async def login(payload: LoginRequest, db: AsyncSession = Depends(get_db)):
-    return await AuthService.login(db, payload.username, payload.password)
+async def login(request: LoginRequest, db: AsyncSession = Depends(get_db)):
+    return await AuthService.login(db, request.username, request.password)

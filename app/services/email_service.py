@@ -42,11 +42,11 @@ class EmailService:
             password=settings.SMTP_PASS,
         )
 
-    async def send_otp(self, to_email: str, otp: str):
+    async def send_otp(self, to_email: str, otp: str, title: str):
         html = self.render(
             "email/otp.html",
             {
-                "title": "Verification Code",
+                "title": title,
                 "otp": otp,
                 "expiry_minutes": 10
             }
@@ -54,6 +54,6 @@ class EmailService:
 
         await self.send_email(
             to_email=to_email,
-            subject="Your Verification Code",
+            subject="Your "+title,
             html_content=html
         )

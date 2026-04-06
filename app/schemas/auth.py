@@ -1,6 +1,7 @@
 from pydantic import BaseModel, EmailStr
 
 class RegisterRequest(BaseModel):
+    channel: str
     name: str
     phone: str
     email: EmailStr
@@ -8,6 +9,7 @@ class RegisterRequest(BaseModel):
 
 class ActivateRequest(BaseModel):
     channel: str
+    email: EmailStr
     token: str
 
 class LoginRequest(BaseModel):
@@ -16,9 +18,10 @@ class LoginRequest(BaseModel):
 
 class ForgotRequest(BaseModel):
     channel: str
-    email: str
+    email: EmailStr
 
 class ResetRequest(BaseModel):
     channel: str
+    email: EmailStr
     token: str
     password: str
