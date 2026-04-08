@@ -4,7 +4,8 @@ from app.db.models.user import Role
 from fastapi import APIRouter, Depends, Query
 
 from app.api.deps import get_patient_service
-from app.schemas.patient import PatientResponse, PatientPagedResponse, PatientCreate, PatientUpdate
+from app.schemas.patient import PatientResponse, PatientPagedResponse, PatientCreate, PatientUpdate, \
+    PatientResponseWrapper
 from app.services import PatientService
 from app.core.security import get_current_user, require_role, require_permission
 
@@ -22,7 +23,7 @@ async def index(
     county_id: int = Query(None),
     sub_county_id: int = Query(None),
     #current_user = Depends(require_role(Role.ADMIN)),
-    current_user = Depends(require_permission("delete_user")),
+    #current_user = Depends(require_permission("delete_user")),
     service: PatientService = Depends(get_patient_service)
 ):
     filters = {
@@ -39,7 +40,7 @@ async def index(
         filters=filters
     )
 
-@router.get("/paged", response_model=PatientPagedResponse)
+@router.get("/paged", response_model=PatientResponseWrapper)
 async def paged(
     skip: int = 0,
     limit: int = 20,

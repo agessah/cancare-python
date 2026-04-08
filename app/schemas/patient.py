@@ -54,5 +54,9 @@ class PatientUpdate(BaseModel):
     sub_county_id: int | None = None
 
 
+class PatientResponseWrapper(BaseModel):
+    data: PatientPagedResponse
+
+
 PatientResponse.model_rebuild()
 PatientPagedResponse.model_rebuild()

@@ -59,8 +59,10 @@ class PatientRepository(BaseRepository[Patient]):
 
         if skip is not None and limit is not None:
             return {
-                "total": total,
-                "items": result.scalars().all()
+                "data": {
+                    "total": total,
+                    "items": result.scalars().all()
+                }
             }
 
         return result.unique().scalars().all()
