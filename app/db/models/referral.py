@@ -1,3 +1,5 @@
+from typing import List
+
 from sqlalchemy import Integer, Boolean, ForeignKey, Text, Numeric, CheckConstraint
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
