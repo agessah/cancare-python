@@ -2,6 +2,7 @@ from .auth import AuthService
 from .county import CountyService
 from .document_category import DocumentCategoryService
 from .encounter_assessment import EncounterAssessmentService
+from .follow_up import FollowUpService
 #from .follow_up import FollowUpService
 from .follow_up_status import FollowUpStatusService
 from .gender import GenderService
@@ -11,11 +12,11 @@ from .medical_facility import MedicalFacilityService
 from .patient import PatientService
 from .referral import ReferralService
 from .sub_county import SubCountyService
-#from .user import UserService
+from .user import UserService
 
 __all__ = [
     "AuthService",
-    #"UserService",
+    "UserService",
     "PatientService",
     "EncounterAssessmentService",
     "CountyService",
@@ -27,7 +28,7 @@ __all__ = [
     "EncounterAssessmentService",
     "ReferralService",
     "FollowUpStatusService",
-    #"FollowUpService",
+    "FollowUpService",
     "DocumentCategoryService",
     "MediaTypeService",
 ]

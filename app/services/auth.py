@@ -92,7 +92,7 @@ class AuthService:
                 raise HTTPException(status_code=400, detail="Invalid or expired token!")
 
         if user.active:
-            return { "message": "Account already activated!" }
+            raise HTTPException(409,"Account already activated!")
 
         user.active = True
         await UserRepository.commit(db)
@@ -152,11 +152,9 @@ class AuthService:
             except JWTError:
                 raise HTTPException(status_code=400, detail="Invalid or expired token!")
 
-
             user = await UserRepository.get_by_id(db, user_id)
             if not user:
                 raise HTTPException(400, "Invalid reset token!")
-
 
         user.password = hash_password(request.password)
         await UserRepository.commit(db)

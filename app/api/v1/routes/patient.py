@@ -1,11 +1,12 @@
 from typing import List
 
+from app.db.models.user import Role
 from fastapi import APIRouter, Depends, Query
 
 from app.api.deps import get_patient_service
 from app.schemas.patient import PatientResponse, PatientPagedResponse, PatientCreate, PatientUpdate
 from app.services import PatientService
-from app.core.security import get_current_user
+from app.core.security import get_current_user, require_role, require_permission
 
 router = APIRouter(
     prefix="/patients",
@@ -20,6 +21,8 @@ async def index(
     gender_id: int = Query(None),
     county_id: int = Query(None),
     sub_county_id: int = Query(None),
+    #current_user = Depends(require_role(Role.ADMIN)),
+    current_user = Depends(require_permission("delete_user")),
     service: PatientService = Depends(get_patient_service)
 ):
     filters = {

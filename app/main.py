@@ -1,5 +1,6 @@
 from app.api.v1.routes import (
     auth,
+    user,
     county,
     sub_county,
     medical_facility,
@@ -18,6 +19,7 @@ from fastapi import FastAPI
 
 app = FastAPI()
 app.include_router(auth.router)
+app.include_router(user.router)
 app.include_router(county.router)
 app.include_router(sub_county.router)
 app.include_router(medical_facility.router)

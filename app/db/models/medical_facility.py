@@ -1,3 +1,5 @@
+from typing import List
+
 from app.db.base import Base
 from app.db.models.mixins import AuditMixin, ActiveMixin, SoftDeleteMixin
 from sqlalchemy import String, Integer, ForeignKey

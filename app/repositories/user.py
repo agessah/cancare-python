@@ -1,9 +1,14 @@
+from app.repositories.base import BaseRepository
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
 from app.db.models import User
 
 
-class UserRepository:
+class UserRepository(BaseRepository[User]):
+    def __init__(self, db):
+        self.db = db
+        super().__init__(User, db)
+
     @staticmethod
     async def get_by_id(db: AsyncSession, resource_id: int) -> User | None:
         result = await db.execute(select(User).where(User.id == resource_id))
@@ -20,16 +25,9 @@ class UserRepository:
         return result.scalar_one_or_none()
 
     @staticmethod
-    async def get_by_reset_token(db: AsyncSession, token: str) -> User | None:
-        result = await db.execute(select(User).where(User.reset_token == token))
+    async def get_by_token(db: AsyncSession, token: str) -> User | None:
+        result = await db.execute(select(User).where(User.token == token))
         return result.scalar_one_or_none()
-
-    @staticmethod
-    async def create(db: AsyncSession, user: User):
-        db.add(user)
-        await db.commit()
-        await db.refresh(user)
-        return user
 
     @staticmethod
     async def commit(db: AsyncSession):

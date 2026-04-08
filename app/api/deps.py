@@ -12,7 +12,7 @@ from app.repositories import (
     MedicalFacilityRepository,
     PatientRepository,
     ReferralRepository,
-    SubCountyRepository, FollowUpRepository
+    SubCountyRepository, FollowUpRepository, UserRepository
 )
 from app.services import (
     CountyService,
@@ -25,7 +25,7 @@ from app.services import (
     MedicalFacilityService,
     PatientService,
     ReferralService,
-    SubCountyService
+    SubCountyService, UserService
 )
 from app.services.email_service import EmailService
 from app.services.follow_up import FollowUpService
@@ -42,6 +42,12 @@ def set_current_user(
         yield
     finally:
         current_user_id.reset(token)
+
+def get_user_service(
+    db: AsyncSession = Depends(get_db),
+):
+    repo = UserRepository(db)
+    return UserService(repo)
 
 def get_county_service(
     db: AsyncSession = Depends(get_db),

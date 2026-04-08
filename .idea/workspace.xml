@@ -5,12 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d2426d3-6b8b-4dc5-b0cd-936f15c9d850" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/api/v1/routes/user.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/schemas/user.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/services/user.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/v1/routes/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/routes/auth.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/schemas/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/auth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alembic/versions/c3355fe6f15b_initialize.py" beforeDir="false" afterPath="$PROJECT_DIR$/alembic/versions/40c1a8d2c8ec_initialize.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/deps.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/deps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/v1/routes/patient.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/routes/patient.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/core/security.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/security.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db/models/medical_facility.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/models/medical_facility.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/models/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/repositories/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/services/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/auth.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/email_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/email_service.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +58,7 @@
     &quot;ai.playground.ignore.import.keys.banner.in.settings&quot;: &quot;true&quot;,
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;//wsl$/FedoraLinux-43/home/agessah/workspace/python/cancer-care/app/api/v1/routes&quot;,
+    &quot;last_opened_file_path&quot;: &quot;//wsl$/FedoraLinux-43/home/agessah/workspace/python/cancer-care/app/schemas&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -69,9 +78,9 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="\\wsl$\FedoraLinux-43\home\agessah\workspace\python\cancer-care\app\schemas" />
       <recent name="\\wsl$\FedoraLinux-43\home\agessah\workspace\python\cancer-care\app\api\v1\routes" />
       <recent name="\\wsl$\FedoraLinux-43\home\agessah\workspace\python\cancer-care\app\services" />
-      <recent name="\\wsl$\FedoraLinux-43\home\agessah\workspace\python\cancer-care\app\schemas" />
       <recent name="\\wsl$\FedoraLinux-43\home\agessah\workspace\python\cancer-care\app\repositories" />
       <recent name="\\wsl$\FedoraLinux-43\home\agessah\workspace\python\cancer-care\app\db\seeders" />
     </key>
@@ -182,7 +191,10 @@
       <workItem from="1775453832478" duration="21431000" />
       <workItem from="1775478809388" duration="3137000" />
       <workItem from="1775482005816" duration="5376000" />
-      <workItem from="1775491867930" duration="2966000" />
+      <workItem from="1775491867930" duration="3200000" />
+      <workItem from="1775505163213" duration="669000" />
+      <workItem from="1775505848316" duration="6922000" />
+      <workItem from="1775642159214" duration="379000" />
     </task>
     <servers />
   </component>
@@ -199,10 +211,6 @@
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/app/db/models/gender.py</url>
           <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/main.py</url>
-          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
