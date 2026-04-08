@@ -3,11 +3,6 @@ from typing import List, Optional
 from app.db.models.user import Role
 from pydantic import BaseModel, EmailStr
 
-
-class UserResponseWrapper(BaseModel):
-    data: UserResponse
-
-
 class UserResponse(BaseModel):
     id: int
     name: str
@@ -48,6 +43,9 @@ class UserOut(UserBase):
 
     class Config:
         orm_mode = True
+
+class UserResponseWrapper(BaseModel):
+    data: UserResponse
 
 UserResponse.model_rebuild()
 UserPagedResponse.model_rebuild()
