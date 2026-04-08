@@ -4,6 +4,10 @@ from app.db.models.user import Role
 from pydantic import BaseModel, EmailStr
 
 
+class UserResponseWrapper(BaseModel):
+    data: UserResponse
+
+
 class UserResponse(BaseModel):
     id: int
     name: str

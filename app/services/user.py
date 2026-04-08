@@ -12,4 +12,4 @@ class UserService:
         if not resource:
             raise HTTPException(404, "User not found")
 
-        return resource
+        return { "data": resource }
