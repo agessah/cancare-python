@@ -19,7 +19,8 @@ async def index(
     sort: str = Query(None),
     referral_id: int = Query(None),
     status_id: int = Query(None),
-    service: FollowUpService = Depends(get_follow_up_service)
+    service:
+    FollowUpService = Depends(get_follow_up_service)
 ):
     filters = {
         "referral_id": referral_id,
