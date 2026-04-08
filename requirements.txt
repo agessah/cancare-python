@@ -17,3 +17,4 @@ joblib
 shap
 scikit-learn
 pandas
+openpyxl
