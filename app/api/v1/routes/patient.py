@@ -1,22 +1,19 @@
 from typing import List
 
-from app.db.models.user import Role
-from fastapi import APIRouter, Depends, Query
+from fastapi import APIRouter, Depends, Query, Request
+from fastapi_pagination import Page
 
 from app.api.deps import get_patient_service
-from app.schemas.patient import PatientResponse, PatientPagedResponse, PatientCreate, PatientUpdate, \
-    PatientResponseWrapper
+from app.core.security import get_current_user
+from app.schemas.patient import PatientResponse, PatientCreate, PatientUpdate, PatientResponseWrapper
+from app.schemas.base import SuccessResponse
 from app.services import PatientService
-from app.core.security import get_current_user, require_role, require_permission
 
-router = APIRouter(
-    prefix="/patients",
-    tags=["Patients"],
-    dependencies=[Depends(get_current_user)]
-)
+router = APIRouter()
 
-@router.get("", response_model=List[PatientResponse])
+@router.get("", response_model=PatientResponseWrapper)
 async def index(
+    request: Request,
     search: str = Query(None),
     sort: str = Query(None),
     gender_id: int = Query(None),
@@ -33,17 +30,16 @@ async def index(
     }
 
     return await service.index(
-        skip=None,
-        limit=None,
+        request=request,
         search=search,
         sort=sort,
         filters=filters
     )
 
-@router.get("/paged", response_model=PatientResponseWrapper)
+
+@router.get("/paged", response_model=Page[PatientResponse])
 async def paged(
-    skip: int = 0,
-    limit: int = 20,
+    request: Request,
     search: str = Query(None),
     sort: str = Query(None),
     gender_id: int = Query(None),
@@ -58,8 +54,7 @@ async def paged(
     }
 
     return await service.index(
-        skip=skip,
-        limit=limit,
+        request=request,
         search=search,
         sort=sort,
         filters=filters
@@ -74,7 +69,7 @@ async def show(
     return await service.show(resource_id)
 
 
-@router.post("", response_model=PatientResponse, status_code=201)
+@router.post("", response_model=SuccessResponse, status_code=201)
 async def create(
     payload: PatientCreate,
     service: PatientService = Depends(get_patient_service)
@@ -89,6 +84,3 @@ async def update(
     service: PatientService = Depends(get_patient_service)
 ):
     return await service.update(resource_id, payload)
-
-
-

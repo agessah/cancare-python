@@ -1,6 +1,13 @@
 from __future__ import annotations
 from datetime import date
-from typing import List
+from typing import List, Generic, TypeVar
+
+from fastapi_pagination import Page
+
+from fastapi_pagination import Page
+from fastapi_pagination.paginator import paginate as paginate_fn
+from fastapi_pagination.bases import AbstractPage
+from pydantic.generics import GenericModel
 
 from app.schemas.sub_county import SubCountyResponse
 from app.schemas.gender import GenderResponse
@@ -55,7 +62,7 @@ class PatientUpdate(BaseModel):
 
 
 class PatientResponseWrapper(BaseModel):
-    data: PatientPagedResponse
+    data: List[PatientResponse]
 
 
 PatientResponse.model_rebuild()

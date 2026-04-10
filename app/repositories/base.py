@@ -3,6 +3,10 @@ from typing import Type, Generic, TypeVar, Optional, List
 from sqlalchemy import Select, select, delete, update
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import DeclarativeBase
+# Add this import at the top of base.py
+from sqlalchemy.exc import IntegrityError
+
+from fastapi import HTTPException
 
 
 ModelType = TypeVar("ModelType", bound=DeclarativeBase)
@@ -13,25 +17,44 @@ class BaseRepository(Generic[ModelType]):
         self.db = db
 
     async def create(self, data: dict) -> ModelType:
-        obj = self.model(**data)
-        self.db.add(obj)
-        await self.db.commit()
-        await self.db.refresh(obj)
-        return obj
+        try:
+            obj = self.model(**data)
+            self.db.add(obj)
+            await self.db.commit()
+            await self.db.refresh(obj)
+            return  { "message": "Record created successfully" }
+
+        except IntegrityError as e:
+            await self.db.rollback()
+
+            if "patients_name_key" in str(e):
+                raise HTTPException(409, f"Patient with name already exists!")
+            else:
+                raise HTTPException(400, "Database integrity error occurred")
+
+
 
     async def update(self, obj_id: int, data: dict) -> Optional[ModelType]:
-        obj = await self.db.get(self.model, obj_id)
+        try:
+            obj = await self.db.get(self.model, obj_id)
 
-        if not obj:
-            return None
+            if not obj:
+                return None
 
-        for key, value in data.items():
-            setattr(obj, key, value)
+            for key, value in data.items():
+                setattr(obj, key, value)
 
-        await self.db.commit()
-        await self.db.refresh(obj)
+            await self.db.commit()
+            await self.db.refresh(obj)
 
-        return obj
+            return { "message": "Record updated successfully" }
+        except IntegrityError as e:
+            await self.db.rollback()
+
+            if "patients_name_key" in str(e):
+                raise HTTPException(409, f"Patient with name already exists!")
+            else:
+                raise HTTPException(400, "Database integrity error occurred")
 
 
     async def delete(self, obj_id: int) -> bool:

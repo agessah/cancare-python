@@ -33,6 +33,28 @@ from app.services.follow_up import FollowUpService
 from fastapi import Depends
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from app.services import AuthService
+
+
+
+def get_email_service():
+    return EmailService()
+
+
+def get_auth_service(
+    db: AsyncSession = Depends(get_db),
+    email_service: EmailService = Depends(get_email_service),
+) -> AuthService:
+    return AuthService(db=db, email_service=email_service)
+
+
+
+
+
+
+
+
+
 
 def set_current_user(
     user=Depends(get_current_user),
@@ -121,5 +143,3 @@ def get_follow_up_service(
     repo = FollowUpRepository(db)
     return FollowUpService(repo)
 
-def get_email_service():
-    return EmailService()

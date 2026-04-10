@@ -6,8 +6,7 @@ from app.db.session import get_db
 from app.schemas.auth import RegisterRequest, ActivateRequest, ForgotRequest, ResetRequest, LoginRequest
 from app.services import AuthService
 
-router = APIRouter(prefix="/auth", tags=["Auth"])
-
+router = APIRouter()
 
 @router.post("/register")
 async def register(

@@ -1,8 +1,15 @@
+from fastapi import Depends
+from fastapi_pagination import Params
+
+from fastapi import Request
+
 from app.db.models import Patient
 from app.repositories.base import BaseRepository
 from app.utils.query_builder import apply_filters, apply_search, apply_sort
 from sqlalchemy import select, func
 from sqlalchemy.orm import selectinload
+
+from fastapi_pagination.ext.sqlalchemy import paginate
 
 
 class PatientRepository(BaseRepository[Patient]):
@@ -16,13 +23,16 @@ class PatientRepository(BaseRepository[Patient]):
         )
         return result.unique().scalar_one_or_none()
 
+
+
+
+
     async def index(
         self,
-        skip: int = 0,
-        limit: int = 20,
+        request: Request,
         search: str = None,
         sort: str = None,
-        filters: dict = None,
+        filters: dict = None
     ):
         stmt = select(Patient).options(
             selectinload(Patient.gender),
@@ -39,30 +49,18 @@ class PatientRepository(BaseRepository[Patient]):
             stmt = apply_filters(stmt, Patient, filters)
 
         # Search (only allowed fields)
-        if search is not None:
+        if search:
             stmt = apply_search(stmt, Patient, search, ["name", "phone", "location"])
 
         # Sorting
-        if sort is not None:
+        if sort:
             stmt = apply_sort(stmt, Patient, sort)
 
-        total = 0
-        if skip is not None and limit is not None:
-            # Count total
-            count_stmt = select(func.count()).select_from(stmt.subquery())
-            total = await self.db.scalar(count_stmt)
+        if "page" in request.query_params and "size" in request.query_params:
+            data =  await paginate(self.db, stmt)
+            return data
+        else :
+            result = await self.db.execute(stmt)
+            return { "data": result.scalars().all() }
 
-            # Pagination
-            stmt = stmt.offset(skip).limit(limit)
-
-        result = await self.db.execute(stmt)
-
-        if skip is not None and limit is not None:
-            return {
-                "data": {
-                    "total": total,
-                    "items": result.scalars().all()
-                }
-            }
-
-        return result.unique().scalars().all()
+        

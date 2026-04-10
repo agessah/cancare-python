@@ -4,11 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d2426d3-6b8b-4dc5-b0cd-936f15c9d850" name="Changes" comment="Users API">
+    <list default="true" id="9d2426d3-6b8b-4dc5-b0cd-936f15c9d850" name="Changes" comment="Patients Paged API">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/deps.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/deps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/v1/routes/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/routes/auth.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/api/v1/routes/patient.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/routes/patient.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/core/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/core/cors.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/cors.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/core/pagination.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/pagination.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/repositories/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/base.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/repositories/patient.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/patient.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemas/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/base.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/schemas/patient.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/patient.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/auth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/patient.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/patient.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,6 +99,7 @@
       <recent name="\\wsl$\FedoraLinux-43\home\agessah\workspace\python\cancer-care\app\db\seeders" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="\\wsl$\FedoraLinux-43\home\agessah\workspace\python\cancer-care\app\api\v1" />
       <recent name="\\wsl$\FedoraLinux-43\home\agessah\workspace\python\cancer-care\app\ai" />
       <recent name="\\wsl$\FedoraLinux-43\home\agessah\workspace\python\cancer-care" />
       <recent name="\\wsl$\FedoraLinux-43\home\agessah\workspace\python\cancer-care\app" />
@@ -197,7 +211,12 @@
       <workItem from="1775505848316" duration="6922000" />
       <workItem from="1775642159214" duration="4219000" />
       <workItem from="1775649240576" duration="4444000" />
-      <workItem from="1775684223814" duration="980000" />
+      <workItem from="1775684223814" duration="2775000" />
+      <workItem from="1775714780673" duration="4404000" />
+      <workItem from="1775735906402" duration="17317000" />
+      <workItem from="1775767766323" duration="6580000" />
+      <workItem from="1775799228043" duration="103000" />
+      <workItem from="1775801631661" duration="1712000" />
     </task>
     <task id="LOCAL-00001" summary="Referral Module">
       <option name="closed" value="true" />
@@ -279,7 +298,15 @@
       <option name="project" value="LOCAL" />
       <updated>1775654280207</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Patients Paged API">
+      <option name="closed" value="true" />
+      <created>1775685239124</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1775685239124</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -289,7 +316,8 @@
     <MESSAGE value="Referral Module" />
     <MESSAGE value=".env" />
     <MESSAGE value="Users API" />
-    <option name="LAST_COMMIT_MESSAGE" value="Users API" />
+    <MESSAGE value="Patients Paged API" />
+    <option name="LAST_COMMIT_MESSAGE" value="Patients Paged API" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

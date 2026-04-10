@@ -1,6 +1,9 @@
 from pydantic_settings import BaseSettings
 
 class Settings(BaseSettings):
+    APP_NAME: str = "Cancer Care API"
+    DEBUG: bool = True
+
     DATABASE_URL: str
     SECRET_KEY: str
     ALGORITHM: str = "HS256"
@@ -13,6 +16,8 @@ class Settings(BaseSettings):
     SMTP_PASS: str
 
     FRONTEND_URL: str
+
+    CORS_ORIGINS: str = "http://localhost:4200"
 
     class Config:
         env_file = ".env"

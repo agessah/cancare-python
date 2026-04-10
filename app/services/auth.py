@@ -16,7 +16,8 @@ from app.schemas.auth import RegisterRequest, ActivateRequest, ForgotRequest, Re
 
 
 class AuthService:
-    def __init__(self, email_service: EmailService):
+    def __init__(self, db: AsyncSession, email_service):
+        self.db = db
         self.email_service = email_service
 
     @staticmethod

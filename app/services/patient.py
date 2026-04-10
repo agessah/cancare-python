@@ -1,10 +1,11 @@
 from app.repositories import PatientRepository
-from fastapi import HTTPException
+from fastapi import HTTPException, Request
 
 
 class PatientService:
     def __init__(self, repo: PatientRepository):
         self.repo = repo
+
 
     async def create(self, payload):
         # Check duplicate phone
@@ -15,6 +16,7 @@ class PatientService:
 
         return await self.repo.create(payload.model_dump())
 
+
     async def update(self, resource_id, payload):
         resource = await self.repo.get(resource_id)
 
@@ -23,21 +25,21 @@ class PatientService:
 
         return await self.repo.update(resource_id, payload.model_dump(exclude_unset=True))
 
+
     async def index(
         self,
-        skip: int = None,
-        limit: int = None,
+            request: Request,
         search: str = None,
         sort: str = None,
         filters: dict = None
     ):
         return await self.repo.index(
-            skip=skip,
-            limit=limit,
+            request=request,
             search=search,
             sort=sort,
             filters=filters
         )
+
 
     async def show(self, resource_id: int):
         resource = await self.repo.get(resource_id)
