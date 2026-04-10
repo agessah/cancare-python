@@ -1,5 +1,3 @@
-from typing import List
-
 from fastapi import APIRouter, Depends, Query, Request
 from fastapi_pagination import Page
 
@@ -77,7 +75,7 @@ async def create(
     return await service.create(payload)
 
 
-@router.put("/{resource_id}", response_model=PatientResponse)
+@router.put("/{resource_id}", response_model=SuccessResponse)
 async def update(
     resource_id: int,
     payload: PatientUpdate,

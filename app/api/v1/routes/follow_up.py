@@ -1,5 +1,6 @@
 from typing import List
 
+from app.schemas.base import SuccessResponse
 from fastapi import APIRouter, Depends, Query
 
 from app.api.deps import get_follow_up_service
@@ -63,7 +64,7 @@ async def show(
     return await service.show(resource_id)
 
 
-@router.post("", response_model=FollowUpResponse, status_code=201)
+@router.post("", response_model=SuccessResponse, status_code=201)
 async def create(
     payload: FollowUpCreate,
     service: FollowUpService = Depends(get_follow_up_service)
@@ -71,7 +72,7 @@ async def create(
     return await service.create(payload)
 
 
-@router.put("/{resource_id}", response_model=FollowUpResponse)
+@router.put("/{resource_id}", response_model=SuccessResponse)
 async def update(
     resource_id: int,
     payload: FollowUpUpdate,

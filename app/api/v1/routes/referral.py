@@ -1,5 +1,6 @@
 from typing import List
 
+from app.schemas.base import SuccessResponse
 from fastapi import APIRouter, Depends, Query
 
 from app.api.deps import get_referral_service
@@ -66,7 +67,7 @@ async def show(
     return await service.show(resource_id)
 
 
-@router.post("", response_model=ReferralResponse, status_code=201)
+@router.post("", response_model=SuccessResponse, status_code=201)
 async def create(
     payload: ReferralCreate,
     service: ReferralService = Depends(get_referral_service)
@@ -74,7 +75,7 @@ async def create(
     return await service.create(payload)
 
 
-@router.put("/{resource_id}", response_model=ReferralResponse)
+@router.put("/{resource_id}", response_model=SuccessResponse)
 async def update(
     resource_id: int,
     payload: ReferralUpdate,

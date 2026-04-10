@@ -12,7 +12,7 @@ from app.schemas.encounter_assessment import (
 from app.services import EncounterAssessmentService
 from app.core.security import get_current_user
 
-router = APIRouter(dependencies=[Depends(get_current_user)])
+router = APIRouter()
 
 @router.get("", response_model=List[EncounterAssessmentResponse])
 async def index(
