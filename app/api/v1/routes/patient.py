@@ -1,11 +1,9 @@
+from app.api.deps import get_patient_service
+from app.schemas.base import SuccessResponse
+from app.schemas.patient import PatientResponse, PatientCreate, PatientUpdate, PatientResponseWrapper
+from app.services import PatientService
 from fastapi import APIRouter, Depends, Query, Request
 from fastapi_pagination import Page
-
-from app.api.deps import get_patient_service
-from app.core.security import get_current_user
-from app.schemas.patient import PatientResponse, PatientCreate, PatientUpdate, PatientResponseWrapper
-from app.schemas.base import SuccessResponse
-from app.services import PatientService
 
 router = APIRouter()
 

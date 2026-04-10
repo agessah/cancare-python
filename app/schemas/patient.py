@@ -1,19 +1,14 @@
 from __future__ import annotations
+
 from datetime import date
-from typing import List, Generic, TypeVar
-
-from fastapi_pagination import Page
-
-from fastapi_pagination import Page
-from fastapi_pagination.paginator import paginate as paginate_fn
-from fastapi_pagination.bases import AbstractPage
-from pydantic.generics import GenericModel
-
-from app.schemas.sub_county import SubCountyResponse
-from app.schemas.gender import GenderResponse
-from pydantic import BaseModel
+from typing import List
 
 from app.schemas.county import CountyResponse
+from app.schemas.gender import GenderResponse
+from app.schemas.sub_county import SubCountyResponse
+from pydantic import BaseModel
+from pydantic.generics import GenericModel
+
 
 class PatientResponse(BaseModel):
     id: int
@@ -30,14 +25,6 @@ class PatientResponse(BaseModel):
         from_attributes = True
 
 
-class PatientPagedResponse(BaseModel):
-    total: int
-    items: List[PatientResponse]
-
-    class Config:
-        from_attributes = True
-
-
 class PatientBase(BaseModel):
     name: str
     date_of_birth: date
@@ -46,6 +33,7 @@ class PatientBase(BaseModel):
     location: str
     county_id: int
     sub_county_id: int
+
 
 class PatientCreate(PatientBase):
     pass
@@ -66,4 +54,3 @@ class PatientResponseWrapper(BaseModel):
 
 
 PatientResponse.model_rebuild()
-PatientPagedResponse.model_rebuild()

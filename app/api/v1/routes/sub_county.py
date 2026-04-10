@@ -1,14 +1,12 @@
-from typing import List
-
-from fastapi import APIRouter, Depends, Query
-
 from app.api.deps import get_sub_county_service
-from app.schemas.sub_county import SubCountyResponse, SubCountyPagedResponse
+from app.schemas.sub_county import SubCountyResponse, SubCountyResponseWrapper
 from app.services import SubCountyService
+from fastapi import APIRouter, Depends, Query
+from fastapi_pagination import Page
 
 router = APIRouter()
 
-@router.get("", response_model=List[SubCountyResponse])
+@router.get("", response_model=SubCountyResponseWrapper)
 async def index(
     search: str = Query(None),
     sort: str = Query(None),
@@ -24,7 +22,7 @@ async def index(
     )
 
 
-@router.get("/paged", response_model=SubCountyPagedResponse)
+@router.get("/paged", response_model=Page[SubCountyResponse])
 async def paged(
     skip: int = 0,
     limit: int = 20,

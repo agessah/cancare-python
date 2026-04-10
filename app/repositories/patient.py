@@ -62,5 +62,3 @@ class PatientRepository(BaseRepository[Patient]):
         else :
             result = await self.db.execute(stmt)
             return { "data": result.scalars().all() }
-
-        

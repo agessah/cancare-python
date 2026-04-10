@@ -1,5 +1,7 @@
-from pydantic import BaseModel
 from typing import List
+
+from pydantic import BaseModel
+
 
 class SubCountyResponse(BaseModel):
     id: int
@@ -9,13 +11,9 @@ class SubCountyResponse(BaseModel):
     class Config:
         from_attributes = True
 
-class SubCountyPagedResponse(BaseModel):
-    total: int
-    items: List[SubCountyResponse]
 
-    class Config:
-        from_attributes = True
+class SubCountyResponseWrapper(BaseModel):
+    data: List[SubCountyResponse]
 
 
 SubCountyResponse.model_rebuild()
-SubCountyPagedResponse.model_rebuild()

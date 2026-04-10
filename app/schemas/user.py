@@ -14,21 +14,17 @@ class UserResponse(BaseModel):
     class Config:
         from_attributes = True
 
-class UserPagedResponse(BaseModel):
-    total: int
-    items: List[UserResponse]
-
-    class Config:
-        from_attributes = True
 
 class UserBase(BaseModel):
     name: str
     phone: str
     email: EmailStr
 
+
 class UserCreate(UserBase):
     password: str
     role: Role = Role.CHP
+
 
 class UserUpdate(BaseModel):
     name: Optional[str] = None
@@ -37,6 +33,7 @@ class UserUpdate(BaseModel):
     password: Optional[str] = None
     role: Optional[Role]
 
+
 class UserOut(UserBase):
     id: int
     role: Role
@@ -44,8 +41,9 @@ class UserOut(UserBase):
     class Config:
         orm_mode = True
 
+
 class UserResponseWrapper(BaseModel):
     data: UserResponse
 
+
 UserResponse.model_rebuild()
-UserPagedResponse.model_rebuild()

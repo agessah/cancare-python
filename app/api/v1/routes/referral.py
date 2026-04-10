@@ -1,14 +1,12 @@
 from typing import List
 
-from app.schemas.base import SuccessResponse
-from fastapi import APIRouter, Depends, Query
-
 from app.api.deps import get_referral_service
+from app.schemas.base import SuccessResponse
 from app.schemas.referral import ReferralResponse, ReferralPagedResponse, ReferralCreate, ReferralUpdate
 from app.services import ReferralService
-from app.core.security import get_current_user
+from fastapi import APIRouter, Depends, Query
 
-router = APIRouter(dependencies=[Depends(get_current_user)])
+router = APIRouter()
 
 @router.get("", response_model=List[ReferralResponse])
 async def index(

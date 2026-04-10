@@ -1,14 +1,12 @@
 from typing import List
 
+from app.api.deps import get_follow_up_service
 from app.schemas.base import SuccessResponse
+from app.schemas.follow_up import FollowUpResponse, FollowUpPagedResponse, FollowUpCreate, FollowUpUpdate
+from app.services import FollowUpService
 from fastapi import APIRouter, Depends, Query
 
-from app.api.deps import get_follow_up_service
-from app.schemas.follow_up import FollowUpResponse, FollowUpPagedResponse, FollowUpCreate, FollowUpUpdate
-from app.services import PatientService, FollowUpService
-from app.core.security import get_current_user
-
-router = APIRouter(dependencies=[Depends(get_current_user)])
+router = APIRouter()
 
 @router.get("", response_model=List[FollowUpResponse])
 async def index(

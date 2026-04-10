@@ -1,7 +1,5 @@
 from typing import List
 
-from fastapi import APIRouter, Depends, Query
-
 from app.api.deps import get_encounter_assessment_service
 from app.schemas.encounter_assessment import (
     EncounterAssessmentResponse,
@@ -10,7 +8,7 @@ from app.schemas.encounter_assessment import (
     EncounterAssessmentUpdate
 )
 from app.services import EncounterAssessmentService
-from app.core.security import get_current_user
+from fastapi import APIRouter, Depends, Query
 
 router = APIRouter()
 
