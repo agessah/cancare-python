@@ -4,21 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d2426d3-6b8b-4dc5-b0cd-936f15c9d850" name="Changes" comment="Handling CORS">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/v1/routes/county.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/routes/county.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/v1/routes/document_category.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/routes/document_category.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/v1/routes/encounter_assessment.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/routes/encounter_assessment.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/v1/routes/follow_up.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/routes/follow_up.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/v1/routes/follow_up_status.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/routes/follow_up_status.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/v1/routes/gender.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/routes/gender.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/v1/routes/level.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/routes/level.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/v1/routes/media_type.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/routes/media_type.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/v1/routes/medical_facility.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/routes/medical_facility.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/v1/routes/referral.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/routes/referral.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/v1/routes/sub_county.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/routes/sub_county.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/v1/routes/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/routes/user.py" afterDir="false" />
-    </list>
+    <list default="true" id="9d2426d3-6b8b-4dc5-b0cd-936f15c9d850" name="Changes" comment="Refactoring the APIs Endpoints" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -214,7 +200,7 @@
       <workItem from="1775799228043" duration="103000" />
       <workItem from="1775801631661" duration="3641000" />
       <workItem from="1775810633594" duration="6000" />
-      <workItem from="1775811951472" duration="907000" />
+      <workItem from="1775811951472" duration="1228000" />
     </task>
     <task id="LOCAL-00001" summary="Referral Module">
       <option name="closed" value="true" />
@@ -320,7 +306,15 @@
       <option name="project" value="LOCAL" />
       <updated>1775812185352</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Refactoring the APIs Endpoints">
+      <option name="closed" value="true" />
+      <created>1775812948868</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1775812948868</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -332,7 +326,8 @@
     <MESSAGE value="Users API" />
     <MESSAGE value="Patients Paged API" />
     <MESSAGE value="Handling CORS" />
-    <option name="LAST_COMMIT_MESSAGE" value="Handling CORS" />
+    <MESSAGE value="Refactoring the APIs Endpoints" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactoring the APIs Endpoints" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
