@@ -3,7 +3,7 @@ from app.schemas.county import CountyResponse, CountyPagedResponse
 from app.services import CountyService
 from fastapi import APIRouter, Depends, Query
 
-router = APIRouter(prefix="/counties", tags=["Counties"])
+router = APIRouter()
 
 @router.get("", response_model=list[CountyResponse])
 async def index(

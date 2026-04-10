@@ -4,7 +4,7 @@ from app.api.deps import get_media_type_service
 from app.schemas.media_type import MediaTypeResponse
 from app.services import MediaTypeService
 
-router = APIRouter(prefix="/media-types", tags=["MediaType"])
+router = APIRouter()
 
 @router.get("/", response_model=list[MediaTypeResponse])
 async def index(

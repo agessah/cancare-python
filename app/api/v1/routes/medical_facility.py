@@ -6,7 +6,7 @@ from app.api.deps import get_medical_facility_service
 from app.schemas.medical_facility import MedicalFacilityResponse, MedicalFacilityPagedResponse
 from app.services import MedicalFacilityService
 
-router = APIRouter(prefix="/medical-facilities", tags=["MedicalFacilities"])
+router = APIRouter()
 
 @router.get("", response_model=List[MedicalFacilityResponse])
 async def index(

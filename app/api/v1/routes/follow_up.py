@@ -7,11 +7,7 @@ from app.schemas.follow_up import FollowUpResponse, FollowUpPagedResponse, Follo
 from app.services import PatientService, FollowUpService
 from app.core.security import get_current_user
 
-router = APIRouter(
-    prefix="/follow-ups",
-    tags=["FollowUps"],
-    dependencies=[Depends(get_current_user)]
-)
+router = APIRouter(dependencies=[Depends(get_current_user)])
 
 @router.get("", response_model=List[FollowUpResponse])
 async def index(

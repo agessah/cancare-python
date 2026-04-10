@@ -6,9 +6,7 @@ from app.services import UserService
 
 from fastapi import APIRouter, Depends
 
-router = APIRouter(
-   dependencies=[Depends(get_current_user)]
-)
+router = APIRouter(dependencies=[Depends(get_current_user)])
 
 @router.get("/profile", response_model=UserResponseWrapper)
 async def profile(

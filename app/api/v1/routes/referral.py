@@ -7,11 +7,7 @@ from app.schemas.referral import ReferralResponse, ReferralPagedResponse, Referr
 from app.services import ReferralService
 from app.core.security import get_current_user
 
-router = APIRouter(
-    prefix="/referrals",
-    tags=["Referrals"],
-    dependencies=[Depends(get_current_user)]
-)
+router = APIRouter(dependencies=[Depends(get_current_user)])
 
 @router.get("", response_model=List[ReferralResponse])
 async def index(

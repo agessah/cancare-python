@@ -4,7 +4,7 @@ from app.api.deps import get_level_service
 from app.schemas.level import LevelResponse
 from app.services import LevelService
 
-router = APIRouter(prefix="/levels", tags=["Level"])
+router = APIRouter()
 
 @router.get("/", response_model=list[LevelResponse])
 async def index(

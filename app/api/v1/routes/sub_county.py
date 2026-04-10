@@ -6,7 +6,7 @@ from app.api.deps import get_sub_county_service
 from app.schemas.sub_county import SubCountyResponse, SubCountyPagedResponse
 from app.services import SubCountyService
 
-router = APIRouter(prefix="/sub-counties", tags=["SubCounties"])
+router = APIRouter()
 
 @router.get("", response_model=List[SubCountyResponse])
 async def index(
