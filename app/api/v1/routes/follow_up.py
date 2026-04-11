@@ -1,15 +1,15 @@
-from typing import List
-
 from app.api.deps import get_follow_up_service
 from app.schemas.base import SuccessResponse
-from app.schemas.follow_up import FollowUpResponse, FollowUpPagedResponse, FollowUpCreate, FollowUpUpdate
+from app.schemas.follow_up import FollowUpResponse, FollowUpCreate, FollowUpUpdate, FollowUpResponseWrapper
 from app.services import FollowUpService
-from fastapi import APIRouter, Depends, Query
+from fastapi import APIRouter, Depends, Query, Request
+from fastapi_pagination import Page
 
 router = APIRouter()
 
-@router.get("", response_model=List[FollowUpResponse])
+@router.get("", response_model=FollowUpResponseWrapper)
 async def index(
+    request: Request,
     search: str = Query(None),
     sort: str = Query(None),
     referral_id: int = Query(None),
@@ -23,17 +23,15 @@ async def index(
     }
 
     return await service.index(
-        skip=None,
-        limit=None,
+        request=request,
         search=search,
         sort=sort,
         filters=filters
     )
 
-@router.get("/paged", response_model=FollowUpPagedResponse)
+@router.get("/paged", response_model=Page[FollowUpResponse])
 async def paged(
-    skip: int = 0,
-    limit: int = 20,
+    request: Request,
     search: str = Query(None),
     sort: str = Query(None),
     referral_id: int = Query(None),
@@ -46,8 +44,7 @@ async def paged(
     }
 
     return await service.index(
-        skip=skip,
-        limit=limit,
+        request=request,
         search=search,
         sort=sort,
         filters=filters

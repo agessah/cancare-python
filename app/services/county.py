@@ -1,5 +1,5 @@
 from app.repositories import CountyRepository
-from fastapi import HTTPException
+from fastapi import HTTPException, Request
 
 
 class CountyService:
@@ -8,14 +8,12 @@ class CountyService:
 
     async def index(
             self,
-            skip: int = None,
-            limit: int = None,
+            request: Request,
             search: str = None,
             sort: str = None
     ):
         return await self.repo.index(
-            skip=skip,
-            limit=limit,
+            request=request,
             search=search,
             sort=sort
         )
@@ -24,6 +22,6 @@ class CountyService:
         resource = await self.repo.get(resource_id)
 
         if not resource:
-            raise HTTPException(status_code=404, detail="County not found!")
+            raise HTTPException(404, "County not found!")
 
         return resource

@@ -19,13 +19,6 @@ class ReferralResponse(BaseModel):
     class Config:
         from_attributes = True
 
-class ReferralPagedResponse(BaseModel):
-    total: int
-    items: List[ReferralResponse]
-
-    class Config:
-        from_attributes = True
-
 
 class ReferralBase(BaseModel):
     patient_id: int
@@ -33,8 +26,10 @@ class ReferralBase(BaseModel):
     notes: str
     urgency_level_id: int
 
+
 class ReferralCreate(ReferralBase):
     pass
+
 
 class ReferralUpdate(BaseModel):
     patient_id: int | None = None
@@ -42,6 +37,10 @@ class ReferralUpdate(BaseModel):
     notes: str | None = None
     urgency_level_id: int | None = None
 
+
+class ReferralResponseWrapper(BaseModel):
+    data: List[ReferralResponse]
+
+
 ReferralResponse.model_rebuild()
-ReferralPagedResponse.model_rebuild()
 ReferralUpdate.model_rebuild()

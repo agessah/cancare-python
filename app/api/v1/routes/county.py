@@ -1,35 +1,34 @@
 from app.api.deps import get_county_service
-from app.schemas.county import CountyResponse, CountyPagedResponse
+from app.schemas.county import CountyResponse, CountyResponseWrapper
 from app.services import CountyService
-from fastapi import APIRouter, Depends, Query
+from fastapi import APIRouter, Depends, Query, Request
+from fastapi_pagination import Page
 
 router = APIRouter()
 
-@router.get("", response_model=list[CountyResponse])
+@router.get("", response_model=CountyResponseWrapper)
 async def index(
+    request: Request,
     search: str = Query(None),
     sort: str = Query(None),
     service: CountyService = Depends(get_county_service)
 ):
     return await service.index(
-        skip=None,
-        limit=None,
+        request=request,
         search=search,
         sort=sort
     )
 
 
-@router.get("/paged", response_model=CountyPagedResponse)
+@router.get("/paged", response_model=Page[CountyResponse])
 async def paged(
-    skip: int = 0,
-    limit: int = 20,
+    request: Request,
     search: str = Query(None),
     sort: str = Query(None),
     service: CountyService = Depends(get_county_service)
 ):
     return await service.index(
-        skip=skip,
-        limit=limit,
+        request=request,
         search=search,
         sort=sort
     )

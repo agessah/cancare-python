@@ -1,15 +1,15 @@
-from typing import List
-
-from fastapi import APIRouter, Depends, Query
+from fastapi import APIRouter, Depends, Query, Request
+from fastapi_pagination import Page
 
 from app.api.deps import get_medical_facility_service
-from app.schemas.medical_facility import MedicalFacilityResponse, MedicalFacilityPagedResponse
+from app.schemas.medical_facility import MedicalFacilityResponse, MedicalFacilityResponseWrapper
 from app.services import MedicalFacilityService
 
 router = APIRouter()
 
-@router.get("", response_model=List[MedicalFacilityResponse])
+@router.get("", response_model=MedicalFacilityResponseWrapper)
 async def index(
+    request: Request,
     search: str = Query(None),
     sort: str = Query(None),
     county_id: int = Query(None),
@@ -17,8 +17,7 @@ async def index(
     service: MedicalFacilityService = Depends(get_medical_facility_service)
 ):
     return await service.index(
-        skip=None,
-        limit=None,
+        request=request,
         search=search,
         sort=sort,
         filters={
@@ -28,10 +27,9 @@ async def index(
     )
 
 
-@router.get("/paged", response_model=MedicalFacilityPagedResponse)
+@router.get("/paged", response_model=Page[MedicalFacilityResponse])
 async def paged(
-    skip: int = 0,
-    limit: int = 20,
+    request: Request,
     search: str = Query(None),
     sort: str = Query(None),
     county_id: int = Query(None),
@@ -39,8 +37,7 @@ async def paged(
     service: MedicalFacilityService = Depends(get_medical_facility_service)
 ):
     return await service.index(
-        skip=skip,
-        limit=limit,
+        request=request,
         search=search,
         sort=sort,
         filters={

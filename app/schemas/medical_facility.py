@@ -13,13 +13,9 @@ class MedicalFacilityResponse(BaseModel):
     class Config:
         from_attributes = True
 
-class MedicalFacilityPagedResponse(BaseModel):
-    total: int
-    items: List[MedicalFacilityResponse]
 
-    class Config:
-        from_attributes = True
+class MedicalFacilityResponseWrapper(BaseModel):
+    data: List[MedicalFacilityResponse]
 
 
 MedicalFacilityResponse.model_rebuild()
-MedicalFacilityPagedResponse.model_rebuild()

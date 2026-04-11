@@ -1,15 +1,10 @@
-from fastapi import Depends
-from fastapi_pagination import Params
-
-from fastapi import Request
-
 from app.db.models import Patient
 from app.repositories.base import BaseRepository
 from app.utils.query_builder import apply_filters, apply_search, apply_sort
-from sqlalchemy import select, func
-from sqlalchemy.orm import selectinload
-
+from fastapi import Request
 from fastapi_pagination.ext.sqlalchemy import paginate
+from sqlalchemy import select
+from sqlalchemy.orm import selectinload
 
 
 class PatientRepository(BaseRepository[Patient]):

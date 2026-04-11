@@ -1,19 +1,21 @@
-from typing import List
-
 from app.api.deps import get_encounter_assessment_service
+from app.schemas.base import SuccessResponse
 from app.schemas.encounter_assessment import (
     EncounterAssessmentResponse,
-    EncounterAssessmentPagedResponse,
     EncounterAssessmentCreate,
-    EncounterAssessmentUpdate
+    EncounterAssessmentUpdate,
+    EncounterAssessmentResponseWrapper
 )
 from app.services import EncounterAssessmentService
-from fastapi import APIRouter, Depends, Query
+from fastapi import APIRouter, Depends, Query, Request
+from fastapi_pagination import Page
 
 router = APIRouter()
 
-@router.get("", response_model=List[EncounterAssessmentResponse])
+
+@router.get("", response_model=EncounterAssessmentResponseWrapper)
 async def index(
+    request: Request,
     search: str = Query(None),
     sort: str = Query(None),
     gender_id: int = Query(None),
@@ -28,17 +30,15 @@ async def index(
     }
 
     return await service.index(
-        skip=None,
-        limit=None,
+        request=request,
         search=search,
         sort=sort,
         filters=filters
     )
 
-@router.get("/paged", response_model=EncounterAssessmentPagedResponse)
+@router.get("/paged", response_model=Page[EncounterAssessmentResponse])
 async def paged(
-    skip: int = 0,
-    limit: int = 20,
+    request: Request,
     search: str = Query(None),
     sort: str = Query(None),
     gender_id: int = Query(None),
@@ -53,8 +53,7 @@ async def paged(
     }
 
     return await service.index(
-        skip=skip,
-        limit=limit,
+        request=request,
         search=search,
         sort=sort,
         filters=filters
@@ -69,7 +68,7 @@ async def show(
     return await service.show(resource_id)
 
 
-@router.post("", response_model=EncounterAssessmentResponse, status_code=201)
+@router.post("", response_model=SuccessResponse, status_code=201)
 async def create(
     payload: EncounterAssessmentCreate,
     service: EncounterAssessmentService = Depends(get_encounter_assessment_service)
@@ -77,7 +76,7 @@ async def create(
     return await service.create(payload)
 
 
-@router.put("/{resource_id}", response_model=EncounterAssessmentResponse)
+@router.put("/{resource_id}", response_model=SuccessResponse)
 async def update(
     resource_id: int,
     payload: EncounterAssessmentUpdate,

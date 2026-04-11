@@ -1,4 +1,4 @@
-from fastapi import HTTPException
+from fastapi import HTTPException, Request
 
 from app.repositories import FollowUpRepository
 
@@ -14,21 +14,19 @@ class FollowUpService:
         resource = await self.repo.get(resource_id)
 
         if not resource:
-            raise HTTPException(status_code=404, detail="Record not found!")
+            raise HTTPException(404, "Record not found!")
 
         return await self.repo.update(resource_id, payload.model_dump(exclude_unset=True))
 
     async def index(
         self,
-        skip: int = None,
-        limit: int = None,
+        request: Request,
         search: str = None,
         sort: str = None,
         filters: dict = None
     ):
         return await self.repo.index(
-            skip=skip,
-            limit=limit,
+            request=request,
             search=search,
             sort=sort,
             filters=filters

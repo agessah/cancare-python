@@ -8,7 +8,7 @@ from .medical_facility import MedicalFacility
 from .media_type import MediaType
 from .patient import Patient
 from .referral import Referral
-from .subcounty import SubCounty
+from .sub_county import SubCounty
 from .user import User
 from .county import County
 

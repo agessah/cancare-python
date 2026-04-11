@@ -28,13 +28,6 @@ class EncounterAssessmentResponse(BaseModel):
     class Config:
         from_attributes = True
 
-class EncounterAssessmentPagedResponse(BaseModel):
-    total: int
-    items: List[EncounterAssessmentResponse]
-
-    class Config:
-        from_attributes = True
-
 
 class EncounterAssessmentBase(BaseModel):
     patient_id: int
@@ -52,8 +45,10 @@ class EncounterAssessmentBase(BaseModel):
     notes: str
     #risk_score: Decimal
 
+
 class EncounterAssessmentCreate(EncounterAssessmentBase):
     pass
+
 
 class EncounterAssessmentUpdate(BaseModel):
     patient_id: int | None = None
@@ -71,6 +66,10 @@ class EncounterAssessmentUpdate(BaseModel):
     notes: str | None = None
     #risk_score: Decimal | None = None
 
+
+class EncounterAssessmentResponseWrapper(BaseModel):
+    data: List[EncounterAssessmentResponse]
+
+
 EncounterAssessmentResponse.model_rebuild()
-EncounterAssessmentPagedResponse.model_rebuild()
 EncounterAssessmentUpdate.model_rebuild()

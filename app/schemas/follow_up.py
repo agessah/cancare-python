@@ -17,27 +17,26 @@ class FollowUpResponse(BaseModel):
     class Config:
         from_attributes = True
 
-class FollowUpPagedResponse(BaseModel):
-    total: int
-    items: List[FollowUpResponse]
-
-    class Config:
-        from_attributes = True
-
 
 class FollowUpBase(BaseModel):
     referral_id: int
     status_id: int
     notes: str
 
+
 class FollowUpCreate(FollowUpBase):
     pass
+
 
 class FollowUpUpdate(BaseModel):
     referral_id: int | None = None
     status_id: int | None = None
     notes: str | None = None
 
+
+class FollowUpResponseWrapper(BaseModel):
+    data: List[FollowUpResponse]
+
+
 FollowUpResponse.model_rebuild()
-FollowUpPagedResponse.model_rebuild()
 FollowUpUpdate.model_rebuild()

@@ -10,4 +10,4 @@ class LevelRepository:
 
     async def index(self):
         result = await self.db.execute(select(Level))
-        return result.unique().scalars().all()
+        return {"data": result.unique().scalars().all()}

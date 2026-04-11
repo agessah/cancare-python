@@ -21,14 +21,14 @@ class PatientService:
         resource = await self.repo.get(resource_id)
 
         if not resource:
-            raise HTTPException(status_code=404, detail="Patient not found")
+            raise HTTPException(404, "Patient not found")
 
         return await self.repo.update(resource_id, payload.model_dump(exclude_unset=True))
 
 
     async def index(
         self,
-            request: Request,
+        request: Request,
         search: str = None,
         sort: str = None,
         filters: dict = None

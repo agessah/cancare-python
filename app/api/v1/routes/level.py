@@ -1,3 +1,4 @@
+from app.schemas.base import ResponseListWrapper
 from fastapi import APIRouter, Depends
 
 from app.api.deps import get_level_service
@@ -6,7 +7,7 @@ from app.services import LevelService
 
 router = APIRouter()
 
-@router.get("/", response_model=list[LevelResponse])
+@router.get("/", response_model=ResponseListWrapper[LevelResponse])
 async def index(
     service:LevelService = Depends(get_level_service)
 ):

@@ -1,6 +1,8 @@
 from app.db.models import SubCounty
 from app.repositories.base import BaseRepository
 from app.utils.query_builder import apply_filters, apply_search, apply_sort
+from fastapi import Request
+from fastapi_pagination.ext.sqlalchemy import paginate
 from sqlalchemy import select, func
 
 
@@ -11,8 +13,7 @@ class SubCountyRepository(BaseRepository[SubCounty]):
 
     async def index(
         self,
-        skip: int = None,
-        limit: int = None,
+        request: Request,
         search: str = None,
         sort: str = None,
         filters: dict = None
@@ -35,21 +36,9 @@ class SubCountyRepository(BaseRepository[SubCounty]):
         if sort is not None:
             stmt = apply_sort(stmt, SubCounty, sort)
 
-        total = 0
-        if skip is not None and limit is not None:
-            # Count total
-            count_stmt = select(func.count()).select_from(stmt.subquery())
-            total = await self.db.scalar(count_stmt)
-
-            # Pagination
-            stmt = stmt.offset(skip).limit(limit)
-
-        result = await self.db.execute(stmt)
-
-        if skip is not None and limit is not None:
-            return {
-                "total": total,
-                "items": result.scalars().all()
-            }
-
-        return result.unique().scalars().all()
+        if "page" in request.query_params and "size" in request.query_params:
+            data = await paginate(self.db, stmt)
+            return data
+        else:
+            result = await self.db.execute(stmt)
+            return {"data": result.scalars().all()}

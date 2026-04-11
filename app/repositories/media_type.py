@@ -10,4 +10,4 @@ class MediaTypeRepository:
 
     async def index(self):
         result = await self.db.execute(select(MediaType))
-        return result.unique().scalars().all()
+        return {"data": result.unique().scalars().all()}
