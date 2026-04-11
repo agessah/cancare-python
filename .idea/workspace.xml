@@ -4,47 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d2426d3-6b8b-4dc5-b0cd-936f15c9d850" name="Changes" comment="Patient APIs">
+    <list default="true" id="9d2426d3-6b8b-4dc5-b0cd-936f15c9d850" name="Changes" comment="Refactoring Pagination">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/v1/routes/county.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/routes/county.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/v1/routes/document_category.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/routes/document_category.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/v1/routes/encounter_assessment.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/routes/encounter_assessment.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/v1/routes/follow_up.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/routes/follow_up.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/v1/routes/follow_up_status.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/routes/follow_up_status.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/v1/routes/gender.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/routes/gender.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/v1/routes/level.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/routes/level.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/v1/routes/media_type.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/routes/media_type.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/v1/routes/medical_facility.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/routes/medical_facility.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/v1/routes/referral.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/routes/referral.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/v1/routes/sub_county.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/routes/sub_county.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/db/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/models/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/db/models/subcounty.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/models/sub_county.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/repositories/county.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/county.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/repositories/document_category.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/document_category.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/repositories/encounter_assessment.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/encounter_assessment.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/repositories/follow_up.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/follow_up.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/repositories/follow_up_status.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/follow_up_status.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/repositories/gender.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/gender.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/repositories/level.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/level.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/repositories/media_type.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/media_type.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/repositories/medical_facility.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/medical_facility.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/repositories/patient.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/patient.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/repositories/referral.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/referral.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/repositories/sub_county.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/sub_county.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/schemas/county.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/county.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/schemas/encounter_assessment.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/encounter_assessment.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/schemas/follow_up.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/follow_up.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/schemas/medical_facility.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/medical_facility.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/schemas/referral.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/referral.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/schemas/sub_county.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/sub_county.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/county.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/county.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/encounter_assessment.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/encounter_assessment.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/follow_up.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/follow_up.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/medical_facility.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/medical_facility.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/patient.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/patient.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/referral.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/referral.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/sub_county.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/sub_county.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -244,7 +206,7 @@
       <workItem from="1775811951472" duration="10706000" />
       <workItem from="1775854884302" duration="2002000" />
       <workItem from="1775859164239" duration="8935000" />
-      <workItem from="1775909434761" duration="822000" />
+      <workItem from="1775909434761" duration="886000" />
     </task>
     <task id="LOCAL-00001" summary="Referral Module">
       <option name="closed" value="true" />
@@ -390,7 +352,15 @@
       <option name="project" value="LOCAL" />
       <updated>1775823281280</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Refactoring Pagination">
+      <option name="closed" value="true" />
+      <created>1775910285237</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1775910285238</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -404,7 +374,8 @@
     <MESSAGE value="Handling CORS" />
     <MESSAGE value="Refactoring the APIs Endpoints" />
     <MESSAGE value="Patient APIs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Patient APIs" />
+    <MESSAGE value="Refactoring Pagination" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactoring Pagination" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
