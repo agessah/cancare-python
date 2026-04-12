@@ -22,7 +22,7 @@ class BaseRepository(Generic[ModelType]):
             self.db.add(obj)
             await self.db.commit()
             await self.db.refresh(obj)
-            return  { "message": "Record created successfully" }
+            return  {"detail": "Record created successfully"}
 
         except IntegrityError as e:
             await self.db.rollback()
@@ -47,7 +47,7 @@ class BaseRepository(Generic[ModelType]):
             await self.db.commit()
             await self.db.refresh(obj)
 
-            return { "message": "Record updated successfully" }
+            return {"detail": "Record updated successfully"}
         except IntegrityError as e:
             await self.db.rollback()
 
