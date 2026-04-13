@@ -19,9 +19,6 @@ class PatientRepository(BaseRepository[Patient]):
         return result.unique().scalar_one_or_none()
 
 
-
-
-
     async def index(
         self,
         request: Request,

@@ -7,5 +7,6 @@ T = TypeVar("T")
 class ResponseListWrapper(GenericModel, Generic[T]):
     data: List[T]
 
-class SuccessResponse(BaseModel):
-    message: str
+class ResponseUpsertWrapper(GenericModel, Generic[T]):
+    detail: str
+    data: T

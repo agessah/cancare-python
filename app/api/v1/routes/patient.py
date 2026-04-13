@@ -1,5 +1,5 @@
 from app.api.deps import get_patient_service
-from app.schemas.base import SuccessResponse
+from app.schemas.base import ResponseUpsertWrapper
 from app.schemas.patient import PatientResponse, PatientCreate, PatientUpdate, PatientResponseWrapper
 from app.services import PatientService
 from fastapi import APIRouter, Depends, Query, Request
@@ -65,18 +65,20 @@ async def show(
     return await service.show(resource_id)
 
 
-@router.post("", response_model=SuccessResponse, status_code=201)
+@router.post("", response_model=ResponseUpsertWrapper[PatientResponse], status_code=201)
 async def create(
     payload: PatientCreate,
     service: PatientService = Depends(get_patient_service)
 ):
-    return await service.create(payload)
+    data = await service.create(payload)
+    return  {"detail": "Record created successfully", "data": data}
 
 
-@router.put("/{resource_id}", response_model=SuccessResponse)
+@router.put("/{resource_id}", response_model=ResponseUpsertWrapper[PatientResponse])
 async def update(
     resource_id: int,
     payload: PatientUpdate,
     service: PatientService = Depends(get_patient_service)
 ):
-    return await service.update(resource_id, payload)
+    data = await service.update(resource_id, payload)
+    return {"detail": "Record updated successfully", "data": data}

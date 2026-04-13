@@ -1,6 +1,6 @@
 from typing import Type, Generic, TypeVar, Optional, List
 
-from sqlalchemy import Select, select, delete, update
+from sqlalchemy import Select, select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import DeclarativeBase
 # Add this import at the top of base.py
@@ -22,13 +22,13 @@ class BaseRepository(Generic[ModelType]):
             self.db.add(obj)
             await self.db.commit()
             await self.db.refresh(obj)
-            return  {"detail": "Record created successfully"}
+            return obj
 
         except IntegrityError as e:
             await self.db.rollback()
 
             if "patients_name_key" in str(e):
-                raise HTTPException(409, f"Patient with name already exists!")
+                raise HTTPException(409, f"Patient with name '{data['name']}' already exists!")
             else:
                 raise HTTPException(400, "Database integrity error occurred")
 
@@ -47,12 +47,12 @@ class BaseRepository(Generic[ModelType]):
             await self.db.commit()
             await self.db.refresh(obj)
 
-            return {"detail": "Record updated successfully"}
+            return obj
         except IntegrityError as e:
             await self.db.rollback()
 
             if "patients_name_key" in str(e):
-                raise HTTPException(409, f"Patient with name already exists!")
+                raise HTTPException(409, f"Patient with name '{data['name']}' already exists!")
             else:
                 raise HTTPException(400, "Database integrity error occurred")
 

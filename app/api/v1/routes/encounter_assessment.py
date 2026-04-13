@@ -1,5 +1,5 @@
 from app.api.deps import get_encounter_assessment_service
-from app.schemas.base import SuccessResponse
+from app.schemas.base import ResponseUpsertWrapper
 from app.schemas.encounter_assessment import (
     EncounterAssessmentResponse,
     EncounterAssessmentCreate,
@@ -68,7 +68,7 @@ async def show(
     return await service.show(resource_id)
 
 
-@router.post("", response_model=SuccessResponse, status_code=201)
+@router.post("", response_model=ResponseUpsertWrapper[EncounterAssessmentResponse], status_code=201)
 async def create(
     payload: EncounterAssessmentCreate,
     service: EncounterAssessmentService = Depends(get_encounter_assessment_service)
@@ -76,7 +76,7 @@ async def create(
     return await service.create(payload)
 
 
-@router.put("/{resource_id}", response_model=SuccessResponse)
+@router.put("/{resource_id}", response_model=ResponseUpsertWrapper[EncounterAssessmentResponse])
 async def update(
     resource_id: int,
     payload: EncounterAssessmentUpdate,
