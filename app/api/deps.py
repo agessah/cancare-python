@@ -25,7 +25,7 @@ from app.services import (
     MedicalFacilityService,
     PatientService,
     ReferralService,
-    SubCountyService, UserService
+    SubCountyService, UserService, UtilsService
 )
 from app.services.email_service import EmailService
 from app.services.follow_up import FollowUpService
@@ -129,7 +129,8 @@ def get_encounter_assessment_service(
     db: AsyncSession = Depends(get_db),
 ):
     repo = EncounterAssessmentRepository(db)
-    return EncounterAssessmentService(repo)
+    patient_repo = PatientRepository(db)
+    return EncounterAssessmentService(repo, patient_repo, get_utils_service())
 
 def get_referral_service(
     db: AsyncSession = Depends(get_db),
@@ -143,3 +144,5 @@ def get_follow_up_service(
     repo = FollowUpRepository(db)
     return FollowUpService(repo)
 
+def get_utils_service():
+    return UtilsService()

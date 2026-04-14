@@ -13,6 +13,7 @@ from .patient import PatientService
 from .referral import ReferralService
 from .sub_county import SubCountyService
 from .user import UserService
+from .utils import UtilsService
 
 __all__ = [
     "AuthService",
@@ -31,4 +32,5 @@ __all__ = [
     "FollowUpService",
     "DocumentCategoryService",
     "MediaTypeService",
+    "UtilsService",
 ]
