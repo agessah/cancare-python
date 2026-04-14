@@ -13,6 +13,13 @@ class EncounterAssessment(AuditMixin, SoftDeleteMixin, Base, ActiveMixin):
     id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
     patient_id: Mapped[int] = mapped_column(ForeignKey("patients.id"), nullable=False)
 
+    age: Mapped[int] = mapped_column(
+        Integer, default=0, server_default="0", nullable=False
+    )
+    above_fifty: Mapped[bool] = mapped_column(
+        Boolean, default=False, server_default="false", nullable=False
+    )
+
     painless_lump: Mapped[bool] = mapped_column(
         Boolean, default=False, server_default="false", nullable=False
     )
@@ -25,7 +32,13 @@ class EncounterAssessment(AuditMixin, SoftDeleteMixin, Base, ActiveMixin):
     nipple_retraction: Mapped[bool] = mapped_column(
         Boolean, default=False, server_default="false", nullable=False
     )
-    redness: Mapped[bool] = mapped_column(
+    redness_scaling: Mapped[bool] = mapped_column(
+        Boolean, default=False, server_default="false", nullable=False
+    )
+    breast_pain: Mapped[bool] = mapped_column(
+        Boolean, default=False, server_default="false", nullable=False
+    )
+    swollen_lymph_nodes: Mapped[bool] = mapped_column(
         Boolean, default=False, server_default="false", nullable=False
     )
 
@@ -33,19 +46,33 @@ class EncounterAssessment(AuditMixin, SoftDeleteMixin, Base, ActiveMixin):
         Boolean, default=False, server_default="false", nullable=False
     )
 
-    above_fifty: Mapped[bool] = mapped_column(
-        Boolean, default=False, server_default="false", nullable=False
-    )
     never_been_pregnant: Mapped[bool] = mapped_column(
         Boolean, default=False, server_default="false", nullable=False
     )
     late_menopause: Mapped[bool] = mapped_column(
         Boolean, default=False, server_default="false", nullable=False
     )
-    alcohol_consumption: Mapped[bool] = mapped_column(
+    bmi_risk: Mapped[bool] = mapped_column(
         Boolean, default=False, server_default="false", nullable=False
     )
-    obesity: Mapped[bool] = mapped_column(
+    low_physical_activity: Mapped[bool] = mapped_column(
+        Boolean, default=False, server_default="false", nullable=False
+    )
+
+    prior_screening: Mapped[bool] = mapped_column(
+        Boolean, default=False, server_default="false", nullable=False
+    )
+    prior_benign_breast_disease: Mapped[bool] = mapped_column(
+        Boolean, default=False, server_default="false", nullable=False
+    )
+    self_exam_irregularity: Mapped[bool] = mapped_column(
+        Boolean, default=False, server_default="false", nullable=False
+    )
+
+    alcohol_risk: Mapped[bool] = mapped_column(
+        Boolean, default=False, server_default="false", nullable=False
+    )
+    smoker: Mapped[bool] = mapped_column(
         Boolean, default=False, server_default="false", nullable=False
     )
 

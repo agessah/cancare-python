@@ -10,17 +10,25 @@ from pydantic import BaseModel
 class EncounterAssessmentResponse(BaseModel):
     id: int
     patient: PatientResponse
+    age: int
+    above_fifty: bool
     painless_lump: bool
     nipple_discharge: bool
     skin_dimpling: bool
     nipple_retraction: bool
-    redness: bool
+    redness_scaling: bool
+    breast_pain: bool
+    swollen_lymph_nodes: bool
     family_history: bool
-    above_fifty: bool
     never_been_pregnant: bool
     late_menopause: bool
-    alcohol_consumption: bool
-    obesity: bool
+    bmi_risk: bool
+    low_physical_activity: bool
+    prior_screening: bool
+    prior_benign_breast_disease: bool
+    self_exam_irregularity: bool
+    alcohol_risk: bool
+    smoker: bool
     notes: str
     risk_score: Optional[Decimal] = None
     active: bool
@@ -35,15 +43,20 @@ class EncounterAssessmentBase(BaseModel):
     nipple_discharge: bool
     skin_dimpling: bool
     nipple_retraction: bool
-    redness: bool
+    redness_scaling: bool
+    breast_pain: bool
+    swollen_lymph_nodes: bool
     family_history: bool
-    above_fifty: bool
     never_been_pregnant: bool
     late_menopause: bool
-    alcohol_consumption: bool
-    obesity: bool
+    bmi_risk: bool
+    low_physical_activity: bool
+    prior_screening: bool
+    prior_benign_breast_disease: bool
+    self_exam_irregularity: bool
+    alcohol_risk: bool
+    smoker: bool
     notes: str
-    #risk_score: Decimal
 
 
 class EncounterAssessmentCreate(EncounterAssessmentBase):
@@ -56,15 +69,20 @@ class EncounterAssessmentUpdate(BaseModel):
     nipple_discharge: bool | None = None
     skin_dimpling: bool | None = None
     nipple_retraction: bool | None = None
-    redness: bool | None = None
+    redness_scaling: bool | None = None
+    breast_pain: bool | None = None
+    swollen_lymph_nodes: bool | None = None
     family_history: bool | None = None
-    above_fifty: bool | None = None
     never_been_pregnant: bool | None = None
     late_menopause: bool | None = None
-    alcohol_consumption: bool | None = None
-    obesity: bool | None = None
+    bmi_risk: bool | None = None
+    low_physical_activity: bool | None = None
+    prior_screening: bool | None = None
+    prior_benign_breast_disease: bool | None = None
+    self_exam_irregularity: bool | None = None
+    alcohol_risk: bool | None = None
+    smoker: bool | None = None
     notes: str | None = None
-    #risk_score: Decimal | None = None
 
 
 class EncounterAssessmentResponseWrapper(BaseModel):
