@@ -64,7 +64,8 @@ async def create(
     payload: FollowUpCreate,
     service: FollowUpService = Depends(get_follow_up_service)
 ):
-    return await service.create(payload)
+    data = await service.create(payload)
+    return {"detail": "Record created successfully", "data": data}
 
 
 @router.put("/{resource_id}", response_model=ResponseUpsertWrapper[FollowUpResponse])
@@ -73,7 +74,5 @@ async def update(
     payload: FollowUpUpdate,
     service: FollowUpService = Depends(get_follow_up_service)
 ):
-    return await service.update(resource_id, payload)
-
-
-
+    data = await service.update(resource_id, payload)
+    return {"detail": "Record updated successfully", "data": data}

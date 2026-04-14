@@ -73,7 +73,8 @@ async def create(
     payload: EncounterAssessmentCreate,
     service: EncounterAssessmentService = Depends(get_encounter_assessment_service)
 ):
-    return await service.create(payload)
+    data = await service.create(payload)
+    return {"detail": "Record created successfully", "data": data}
 
 
 @router.put("/{resource_id}", response_model=ResponseUpsertWrapper[EncounterAssessmentResponse])
@@ -82,4 +83,5 @@ async def update(
     payload: EncounterAssessmentUpdate,
     service: EncounterAssessmentService = Depends(get_encounter_assessment_service)
 ):
-    return await service.update(resource_id, payload)
+    data = await service.update(resource_id, payload)
+    return {"detail": "Record updated successfully", "data": data}
