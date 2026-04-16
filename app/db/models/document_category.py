@@ -8,8 +8,3 @@ class DocumentCategory(AuditMixin, Base, ActiveMixin):
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
     name: Mapped[str] = mapped_column(String(50), unique=True, nullable=False)
-
-    #follow_ups: Mapped[list["FollowUp"]] = relationship(
-        #"FollowUp",
-        #back_populates="status"
-    #)
