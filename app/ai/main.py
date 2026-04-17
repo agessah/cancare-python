@@ -67,9 +67,9 @@ def build_input_array(data: InputData):
         data.Alcohol_Risk,
         data.Smoker,
         data.Low_Physical_Activity,
-        data.BMI_Risk,
-        data.BMI_Risk,
-        data.BMI_Risk,
+        data.Prior_Screening,
+        data.Prior_Benign_Breast_Disease,
+        data.Self_Exam_Irregularity,
     ]], dtype=float)
 
 # -------------------------

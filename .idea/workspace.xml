@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d2426d3-6b8b-4dc5-b0cd-936f15c9d850" name="Changes" comment="KnowledgeBase">
-      <change afterPath="$PROJECT_DIR$/app/ai/breast_cancer_risk_model_ready.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/ai/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/ai/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/repositories/county.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/county.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/repositories/document.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/document.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/repositories/patient.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/patient.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/repositories/sub_county.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/sub_county.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -227,7 +222,7 @@
       <workItem from="1776191358371" duration="1072000" />
       <workItem from="1776315531774" duration="2497000" />
       <workItem from="1776335176677" duration="14397000" />
-      <workItem from="1776414160022" duration="9770000" />
+      <workItem from="1776414160022" duration="10283000" />
     </task>
     <task id="LOCAL-00001" summary="Referral Module">
       <option name="closed" value="true" />
@@ -498,6 +493,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Referral Module" />

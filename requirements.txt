@@ -21,4 +21,5 @@ openpyxl
 jinja2
 fastapi-pagination
 matplotlib
+aiofiles
 xgboost
