@@ -1,4 +1,5 @@
 from .county import CountyRepository
+from .document import DocumentRepository
 from .document_category import DocumentCategoryRepository
 from .encounter_assessment import EncounterAssessmentRepository
 from .follow_up import FollowUpRepository
@@ -28,4 +29,5 @@ __all__ = [
     "FollowUpRepository",
     "DocumentCategoryRepository",
     "MediaTypeRepository",
+    "DocumentRepository",
 ]

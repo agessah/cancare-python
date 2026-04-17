@@ -1,9 +1,6 @@
-from datetime import date
-
+from app.repositories import EncounterAssessmentRepository, PatientRepository
 from app.services.utils import UtilsService
 from fastapi import HTTPException, Request
-
-from app.repositories import EncounterAssessmentRepository, PatientRepository
 
 
 class EncounterAssessmentService:

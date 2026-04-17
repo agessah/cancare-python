@@ -12,6 +12,7 @@ class PatientRepository(BaseRepository[Patient]):
         self.db = db
         super().__init__(Patient, db)
 
+
     async def get_by_phone(self, phone: str):
         result = await self.db.execute(
             select(Patient).where(Patient.phone == phone)
@@ -34,7 +35,7 @@ class PatientRepository(BaseRepository[Patient]):
 
         # Auto soft-delete filter
         if hasattr(Patient, "deleted_at"):
-            stmt = stmt.where(Patient.deleted_at == None)
+            stmt = stmt.where(Patient.deleted_at is None)
 
         # Dynamic filtering
         if filters:

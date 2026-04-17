@@ -1,3 +1,4 @@
+from app.core.config import Settings
 from app.core.security import get_current_user  # your auth function
 from app.db.events import current_user_id
 from app.db.session import get_db
@@ -12,7 +13,10 @@ from app.repositories import (
     MedicalFacilityRepository,
     PatientRepository,
     ReferralRepository,
-    SubCountyRepository, FollowUpRepository, UserRepository
+    SubCountyRepository,
+    FollowUpRepository,
+    UserRepository,
+    DocumentRepository
 )
 from app.services import (
     CountyService,
@@ -25,7 +29,10 @@ from app.services import (
     MedicalFacilityService,
     PatientService,
     ReferralService,
-    SubCountyService, UserService, UtilsService
+    SubCountyService,
+    UserService,
+    UtilsService,
+    DocumentService
 )
 from app.services.email_service import EmailService
 from app.services.follow_up import FollowUpService
@@ -36,25 +43,8 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.services import AuthService
 
 
-
 def get_email_service():
     return EmailService()
-
-
-def get_auth_service(
-    db: AsyncSession = Depends(get_db),
-    email_service: EmailService = Depends(get_email_service),
-) -> AuthService:
-    return AuthService(db=db, email_service=email_service)
-
-
-
-
-
-
-
-
-
 
 def set_current_user(
     user=Depends(get_current_user),
@@ -64,6 +54,12 @@ def set_current_user(
         yield
     finally:
         current_user_id.reset(token)
+
+def get_auth_service(
+    db: AsyncSession = Depends(get_db),
+    email_service: EmailService = Depends(get_email_service),
+) -> AuthService:
+    return AuthService(db=db, email_service=email_service)
 
 def get_user_service(
     db: AsyncSession = Depends(get_db),
@@ -143,6 +139,13 @@ def get_follow_up_service(
 ):
     repo = FollowUpRepository(db)
     return FollowUpService(repo)
+
+def get_document_service(
+    db: AsyncSession = Depends(get_db),
+):
+    repo = DocumentRepository(db)
+    settings = Settings()
+    return DocumentService(settings, repo)
 
 def get_utils_service():
     return UtilsService()

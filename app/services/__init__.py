@@ -1,9 +1,9 @@
 from .auth import AuthService
 from .county import CountyService
+from .document import DocumentService
 from .document_category import DocumentCategoryService
 from .encounter_assessment import EncounterAssessmentService
 from .follow_up import FollowUpService
-#from .follow_up import FollowUpService
 from .follow_up_status import FollowUpStatusService
 from .gender import GenderService
 from .level import LevelService
@@ -33,4 +33,5 @@ __all__ = [
     "DocumentCategoryService",
     "MediaTypeService",
     "UtilsService",
+    "DocumentService"
 ]

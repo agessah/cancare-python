@@ -16,6 +16,7 @@ from app.api.v1.routes import (
     follow_up,
     document_category,
     media_type,
+    document,
 )
 
 routers = [
@@ -33,6 +34,7 @@ routers = [
     (follow_up.router, "/follow-ups", "Follow-Ups", [Depends(get_current_user)]),
     (document_category.router, "/document-categories", "Document Categories", []),
     (media_type.router, "/media-types", "Media Types", []),
+    (document.router, "/documents", "Documents", [Depends(get_current_user)]),
 ]
 
 api_router = APIRouter()

@@ -1,3 +1,4 @@
+from .document import Document
 from .document_category import DocumentCategory
 from .encounter_assessment import EncounterAssessment
 from .follow_up import FollowUp
@@ -25,5 +26,6 @@ __all__ = [
     "FollowUpStatus",
     "FollowUp",
     "DocumentCategory",
-    "MediaType"
+    "MediaType",
+    "Document"
 ]

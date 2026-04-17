@@ -19,6 +19,8 @@ class Settings(BaseSettings):
 
     CORS_ORIGINS: str = "http://localhost:4200"
 
+    UPLOAD_DIR: str = "uploads"
+
     class Config:
         env_file = ".env"
 
