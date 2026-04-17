@@ -23,16 +23,28 @@ app = FastAPI(title="Breast Cancer Risk Prediction API")
 # -------------------------
 class InputData(BaseModel):
     Age: int = Field(..., ge=0, le=120)
+    Age_Above_50: int = Field(..., ge=0, le=1)
     Breast_Lump: int = Field(..., ge=0, le=1)
     Nipple_Discharge: int = Field(..., ge=0, le=1)
     Skin_Changes: int = Field(..., ge=0, le=1)
     Nipple_Retraction: int = Field(..., ge=0, le=1)
     Redness_Scaling: int = Field(..., ge=0, le=1)
+    Breast_Pain: int = Field(..., ge=0, le=1)
+    Swollen_Lymph_Nodes: int = Field(..., ge=0, le=1)
     Family_History: int = Field(..., ge=0, le=1)
-    Age_Above_50: int = Field(..., ge=0, le=1)
     Never_Pregnant: int = Field(..., ge=0, le=1)
     Late_Menopause: int = Field(..., ge=0, le=1)
-    Lifestyle_Risk: int = Field(..., ge=0, le=1)
+    BMI_Risk: int = Field(..., ge=0, le=1)
+    Alcohol_Risk: int = Field(..., ge=0, le=1)
+    Smoker: int = Field(..., ge=0, le=1)
+    Low_Physical_Activity: int = Field(..., ge=0, le=1)
+    Prior_Screening: int = Field(..., ge=0, le=1)
+    Prior_Benign_Breast_Disease: int = Field(..., ge=0, le=1)
+    Self_Exam_Irregularity: int = Field(..., ge=0, le=1)
+
+    Symptom_Count: int = Field(..., ge=0, le=10)
+    Risk_Factor_Count: int = Field(..., ge=0, le=10)
+
 
 # -------------------------
 # Helper: Build input array
@@ -40,16 +52,24 @@ class InputData(BaseModel):
 def build_input_array(data: InputData):
     return np.array([[
         data.Age,
+        data.Age_Above_50,
         data.Breast_Lump,
         data.Nipple_Discharge,
         data.Skin_Changes,
         data.Nipple_Retraction,
         data.Redness_Scaling,
+        data.Breast_Pain,
+        data.Swollen_Lymph_Nodes,
         data.Family_History,
-        data.Age_Above_50,
         data.Never_Pregnant,
         data.Late_Menopause,
-        data.Lifestyle_Risk
+        data.BMI_Risk,
+        data.Alcohol_Risk,
+        data.Smoker,
+        data.Low_Physical_Activity,
+        data.BMI_Risk,
+        data.BMI_Risk,
+        data.BMI_Risk,
     ]], dtype=float)
 
 # -------------------------

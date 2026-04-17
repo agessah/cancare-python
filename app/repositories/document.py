@@ -27,7 +27,7 @@ class DocumentRepository(BaseRepository[Document]):
 
         # Auto soft-delete filter
         if hasattr(Document, "deleted_at"):
-            stmt = stmt.where(Document.deleted_at is None)
+            stmt = stmt.where(Document.deleted_at == None)
 
         # Dynamic filtering
         if filters:

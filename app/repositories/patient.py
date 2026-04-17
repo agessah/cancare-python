@@ -35,7 +35,7 @@ class PatientRepository(BaseRepository[Patient]):
 
         # Auto soft-delete filter
         if hasattr(Patient, "deleted_at"):
-            stmt = stmt.where(Patient.deleted_at is None)
+            stmt = stmt.where(Patient.deleted_at == None)
 
         # Dynamic filtering
         if filters:

@@ -22,7 +22,7 @@ class SubCountyRepository(BaseRepository[SubCounty]):
 
         # Auto soft-delete filter
         if hasattr(SubCounty, "deleted_at"):
-            stmt = stmt.where(SubCounty.deleted_at is None)
+            stmt = stmt.where(SubCounty.deleted_at == None)
 
         # Dynamic filtering
         if filters:

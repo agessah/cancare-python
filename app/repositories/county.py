@@ -21,7 +21,7 @@ class CountyRepository(BaseRepository[County]):
 
         # Auto soft-delete filter
         if hasattr(County, "deleted_at"):
-            stmt = stmt.where(County.deleted_at is None)
+            stmt = stmt.where(County.deleted_at == None)
 
         # Search (only allowed fields)
         if search:
