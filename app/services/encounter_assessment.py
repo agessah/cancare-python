@@ -51,11 +51,6 @@ class EncounterAssessmentService:
         await self.repo.create(data)
 
         return {
-            "patient": {
-                "id": patient.id,
-                "name": patient.name,
-                "date_of_birth": patient.date_of_birth
-            },
             "score": int(math.floor((pred_prob * 100) + 0.5)),
             "label": interpreted.get("label"),
             "guidelines": interpreted.get("guidelines")

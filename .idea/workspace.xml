@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9d2426d3-6b8b-4dc5-b0cd-936f15c9d850" name="Changes" comment="AI Results">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemas/encounter_assessment.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/encounter_assessment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/encounter_assessment.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/encounter_assessment.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -229,7 +231,7 @@
       <workItem from="1776522821049" duration="9359000" />
       <workItem from="1776571699821" duration="2015000" />
       <workItem from="1776587608431" duration="1281000" />
-      <workItem from="1776626472956" duration="255000" />
+      <workItem from="1776626472956" duration="745000" />
     </task>
     <task id="LOCAL-00001" summary="Referral Module">
       <option name="closed" value="true" />
@@ -503,7 +505,15 @@
       <option name="project" value="LOCAL" />
       <updated>1776573703624</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="AI Results">
+      <option name="closed" value="true" />
+      <created>1776626736125</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1776626736125</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

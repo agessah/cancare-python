@@ -90,7 +90,6 @@ class EncounterAssessmentResponseWrapper(BaseModel):
 
 
 class EncounterAssessmentResponse2(BaseModel):
-    patient: dict
     score: int
     label: str
     guidelines: List[str]
