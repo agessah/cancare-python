@@ -79,7 +79,7 @@ class EncounterAssessment(AuditMixin, SoftDeleteMixin, Base, ActiveMixin):
     notes: Mapped[str | None] = mapped_column(Text, nullable=True)
 
     risk_score: Mapped[Decimal | None] = mapped_column(
-        Numeric(5, 2),  # up to 999.99
+        Numeric(5, 4),  # up to 9.99999
         nullable=True
     )
 

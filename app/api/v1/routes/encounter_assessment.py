@@ -4,7 +4,7 @@ from app.schemas.encounter_assessment import (
     EncounterAssessmentResponse,
     EncounterAssessmentCreate,
     EncounterAssessmentUpdate,
-    EncounterAssessmentResponseWrapper
+    EncounterAssessmentResponseWrapper, EncounterAssessmentResponse2
 )
 from app.services import EncounterAssessmentService
 from fastapi import APIRouter, Depends, Query, Request
@@ -68,7 +68,7 @@ async def show(
     return await service.show(resource_id)
 
 
-@router.post("", response_model=ResponseUpsertWrapper[EncounterAssessmentResponse], status_code=201)
+@router.post("", response_model=ResponseUpsertWrapper[EncounterAssessmentResponse2], status_code=201)
 async def create(
     payload: EncounterAssessmentCreate,
     service: EncounterAssessmentService = Depends(get_encounter_assessment_service)

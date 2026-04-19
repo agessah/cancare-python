@@ -89,5 +89,12 @@ class EncounterAssessmentResponseWrapper(BaseModel):
     data: List[EncounterAssessmentResponse]
 
 
+class EncounterAssessmentResponse2(BaseModel):
+    patient: dict
+    score: int
+    label: str
+    guidelines: List[str]
+
+
 EncounterAssessmentResponse.model_rebuild()
 EncounterAssessmentUpdate.model_rebuild()
