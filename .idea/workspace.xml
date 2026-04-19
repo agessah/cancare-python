@@ -4,28 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d2426d3-6b8b-4dc5-b0cd-936f15c9d850" name="Changes" comment="KnowledgeBase">
-      <change afterPath="$PROJECT_DIR$/app/ai/test/generate_dataset.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/ai/ultimate/best_model_randomforest.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/ai/ultimate/best_model_xgboost.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/ai/ultimate/breast_cancer_risk_model_ready.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/ai/ultimate/feature_columns.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/csv-editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/csv-editor.xml" afterDir="false" />
+    <list default="true" id="9d2426d3-6b8b-4dc5-b0cd-936f15c9d850" name="Changes" comment="AI Results">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ai/data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ai/features.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ai/generate_dataset.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ai/label_encoder.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/app/ai/ultimate/label_encoder.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ai/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/ai/test/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ai/main_.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/ai/test/main_.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ai/rf_model.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ai/train_rf.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/ai/test/train_rf.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ai/train_rf_.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ai/validate_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/ai/test/validate_dataset.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/v1/routes/encounter_assessment.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/routes/encounter_assessment.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/db/models/encounter_assessment.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/models/encounter_assessment.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/schemas/encounter_assessment.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/encounter_assessment.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/encounter_assessment.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/encounter_assessment.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -247,7 +227,9 @@
       <workItem from="1776500087409" duration="9784000" />
       <workItem from="1776522585456" duration="183000" />
       <workItem from="1776522821049" duration="9359000" />
-      <workItem from="1776571699821" duration="1727000" />
+      <workItem from="1776571699821" duration="2015000" />
+      <workItem from="1776587608431" duration="1281000" />
+      <workItem from="1776626472956" duration="255000" />
     </task>
     <task id="LOCAL-00001" summary="Referral Module">
       <option name="closed" value="true" />
@@ -513,7 +495,15 @@
       <option name="project" value="LOCAL" />
       <updated>1776415336690</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="AI Results">
+      <option name="closed" value="true" />
+      <created>1776573703624</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1776573703624</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -542,7 +532,8 @@
     <MESSAGE value="CORS" />
     <MESSAGE value="Response messages" />
     <MESSAGE value="KnowledgeBase" />
-    <option name="LAST_COMMIT_MESSAGE" value="KnowledgeBase" />
+    <MESSAGE value="AI Results" />
+    <option name="LAST_COMMIT_MESSAGE" value="AI Results" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
