@@ -127,7 +127,7 @@ class EncounterAssessmentService:
             }
         elif prob > 0.5:
             return {
-                "label": "Medium Rsk Detected",
+                "label": "Medium Risk Detected",
                 "guidelines": [
                     "Recommend further screening at a health facility.",
                     "Monitor symptoms closely and report any changes.",
