@@ -5,7 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d2426d3-6b8b-4dc5-b0cd-936f15c9d850" name="Changes" comment="AI Results">
-      <change beforePath="$PROJECT_DIR$/app/services/encounter_assessment.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/encounter_assessment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alembic/versions/162154b7159a_initialize.py" beforeDir="false" afterPath="$PROJECT_DIR$/alembic/versions/e2e12a446d93_initialize.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alembic/versions/a6c610ab2ced_documents.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/v1/routes/document.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/routes/document.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/document.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/document.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/1c65db99-3f50-4298-9690-8b00e39346d4.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/37aebcd2-051e-4ac2-a573-edde882a04d9.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/Team work plan Revised (1).doc" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +66,7 @@
     &quot;ai.playground.ignore.import.keys.banner.in.settings&quot;: &quot;true&quot;,
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;//wsl$/FedoraLinux-43/home/agessah/workspace/python/cancer-care/app/ai/ultimate&quot;,
+    &quot;last_opened_file_path&quot;: &quot;//wsl$/Ubuntu/home/catherine/Workspace/Python/cancare-python&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -100,7 +110,7 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="3.14 WSL (FedoraLinux-43): (/home/agessah/.virtualenvs/cancer-care/bin/python)" />
+      <option name="SDK_NAME" value="WSL (Ubuntu): (/home/catherine/.virtualenvs/cancare-python/bin/python)" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -121,7 +131,6 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-3bd3a6803838-JavaScript-PY-261.22158.340" />
         <option value="bundled-python-sdk-b63d5a1f7c97-b61e75351b1f-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-261.22158.340" />
       </set>
     </attachedChunks>
@@ -230,6 +239,14 @@
       <workItem from="1776571699821" duration="2015000" />
       <workItem from="1776587608431" duration="1281000" />
       <workItem from="1776626472956" duration="1479000" />
+      <workItem from="1776942003997" duration="1523000" />
+      <workItem from="1776943735333" duration="4000" />
+      <workItem from="1776949147895" duration="1110000" />
+      <workItem from="1777101521068" duration="509000" />
+      <workItem from="1777102063558" duration="142000" />
+      <workItem from="1777102254343" duration="5451000" />
+      <workItem from="1777194504000" duration="2501000" />
+      <workItem from="1777209338887" duration="3073000" />
     </task>
     <task id="LOCAL-00001" summary="Referral Module">
       <option name="closed" value="true" />
