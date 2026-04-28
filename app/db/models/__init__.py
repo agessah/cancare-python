@@ -10,6 +10,7 @@ from .media_type import MediaType
 from .patient import Patient
 from .referral import Referral
 from .sub_county import SubCounty
+from .tele_consultation import TeleConsultation
 from .user import User
 from .county import County
 
@@ -27,5 +28,6 @@ __all__ = [
     "FollowUp",
     "DocumentCategory",
     "MediaType",
-    "Document"
+    "Document",
+    "TeleConsultation"
 ]

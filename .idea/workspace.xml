@@ -5,17 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d2426d3-6b8b-4dc5-b0cd-936f15c9d850" name="Changes" comment="AI Results">
+      <change afterPath="$PROJECT_DIR$/app/api/v1/routes/tele_consultation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/db/enums/ConsultationStatus.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/db/models/tele_consultation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/repositories/tele_consultation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/schemas/tele_consultation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/services/tele_consultation.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/alembic/versions/162154b7159a_initialize.py" beforeDir="false" afterPath="$PROJECT_DIR$/alembic/versions/e2e12a446d93_initialize.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/alembic/versions/a6c610ab2ced_documents.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/v1/routes/document.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/routes/document.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/document.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/document.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/1c65db99-3f50-4298-9690-8b00e39346d4.doc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/37aebcd2-051e-4ac2-a573-edde882a04d9.doc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/Team work plan Revised (1).doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/deps.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/deps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/v1/router.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/router.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/models/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/repositories/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +43,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/agessah/cancare-python.git&quot;,
-    &quot;accountId&quot;: &quot;831b2132-2b3f-49e4-bbb6-860df1dd0dc0&quot;
+    &quot;accountId&quot;: &quot;27ab06df-ac9d-4bdf-b20c-62c5921337b1&quot;
   }
 }</component>
   <component name="ProblemsViewState">
@@ -58,7 +60,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.main.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
@@ -66,7 +68,7 @@
     &quot;ai.playground.ignore.import.keys.banner.in.settings&quot;: &quot;true&quot;,
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;//wsl$/Ubuntu/home/catherine/Workspace/Python/cancare-python&quot;,
+    &quot;last_opened_file_path&quot;: &quot;//wsl$/Ubuntu/home/catherine/Workspace/Python/cancare-python/app/api/v1/routes&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -84,13 +86,16 @@
     ]
   }
 }</component>
+  <component name="PyDebuggerOptionsProvider">
+    <option name="myDebuggerBackend" value="DEBUGPY" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="\\wsl$\FedoraLinux-43\home\agessah\workspace\python\cancer-care\app\ai\ultimate" />
-      <recent name="\\wsl$\FedoraLinux-43\home\agessah\workspace\python\cancer-care\app\ai" />
-      <recent name="\\wsl$\FedoraLinux-43\home\agessah\workspace\python\cancer-care\app\schemas" />
-      <recent name="\\wsl$\FedoraLinux-43\home\agessah\workspace\python\cancer-care\app\services" />
-      <recent name="\\wsl$\FedoraLinux-43\home\agessah\workspace\python\cancer-care\app\repositories" />
+      <recent name="\\wsl$\Ubuntu\home\catherine\Workspace\Python\cancare-python\app\api\v1\routes" />
+      <recent name="\\wsl$\Ubuntu\home\catherine\Workspace\Python\cancare-python\app\schemas" />
+      <recent name="\\wsl$\Ubuntu\home\catherine\Workspace\Python\cancare-python\app\services" />
+      <recent name="\\wsl$\Ubuntu\home\catherine\Workspace\Python\cancare-python\app\repositories" />
+      <recent name="\\wsl$\Ubuntu\home\catherine\Workspace\Python\cancare-python\app\db\models" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="\\wsl$\FedoraLinux-43\home\agessah\workspace\python\cancer-care\app\ai\test" />
@@ -246,7 +251,8 @@
       <workItem from="1777102063558" duration="142000" />
       <workItem from="1777102254343" duration="5451000" />
       <workItem from="1777194504000" duration="2501000" />
-      <workItem from="1777209338887" duration="3073000" />
+      <workItem from="1777209338887" duration="17058000" />
+      <workItem from="1777396012037" duration="38000" />
     </task>
     <task id="LOCAL-00001" summary="Referral Module">
       <option name="closed" value="true" />
@@ -536,7 +542,15 @@
       <option name="project" value="LOCAL" />
       <updated>1776627228941</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="AI Results">
+      <option name="closed" value="true" />
+      <created>1777213148562</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1777213148562</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -591,5 +605,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/cancer_care$main.coverage" NAME="main Coverage Results" MODIFIED="1776500428031" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/cancare_python$main.coverage" NAME="main Coverage Results" MODIFIED="1777225942596" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

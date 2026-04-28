@@ -11,6 +11,7 @@ from .medical_facility import MedicalFacilityRepository
 from .patient import PatientRepository
 from .referral import ReferralRepository
 from .sub_county import SubCountyRepository
+from .tele_consultation import TeleConsultationRepository
 from .user import UserRepository
 
 __all__ = [
@@ -30,4 +31,5 @@ __all__ = [
     "DocumentCategoryRepository",
     "MediaTypeRepository",
     "DocumentRepository",
+    "TeleConsultationRepository"
 ]

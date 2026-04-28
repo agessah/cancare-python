@@ -16,6 +16,7 @@ from app.repositories import (
     SubCountyRepository,
     FollowUpRepository,
     UserRepository,
+    TeleConsultationRepository,
     DocumentRepository
 )
 from app.services import (
@@ -31,8 +32,9 @@ from app.services import (
     ReferralService,
     SubCountyService,
     UserService,
-    UtilsService,
-    DocumentService
+    TeleConsultationService,
+    DocumentService,
+    UtilsService
 )
 from app.services.email_service import EmailService
 from app.services.follow_up import FollowUpService
@@ -139,6 +141,13 @@ def get_follow_up_service(
 ):
     repo = FollowUpRepository(db)
     return FollowUpService(repo)
+
+def get_tele_consultation_service(
+    db: AsyncSession = Depends(get_db),
+):
+    repo = TeleConsultationRepository(db)
+    patient_repo = PatientRepository(db)
+    return TeleConsultationService(repo, patient_repo)
 
 def get_document_service(
     db: AsyncSession = Depends(get_db),
