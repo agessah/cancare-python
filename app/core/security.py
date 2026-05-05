@@ -67,19 +67,32 @@ async def get_current_user(
 
     return user
 
-def require_role(*allowed_roles: Role):
-    async def role_checker(current_user: User = Depends(get_current_user)):
-        if current_user.role not in allowed_roles:
-            raise HTTPException(403,"You do not have permission to perform this action")
-        return current_user
-    return role_checker
+
+def require_role(*roles):
+    async def checker(user = Depends(get_current_user)):
+        names = {r.name for r in user.roles}
+
+        if not any(role in names for role in roles):
+            raise HTTPException(403, "Forbidden")
+
+        return user
+    return checker
+
 
 def require_permission(permission: str):
-    def permission_checker(current_user = Depends(get_current_user)):
-        if permission not in ROLE_PERMISSIONS.get(current_user.role, []):
-            raise HTTPException(403,f"Permission '{permission}' required")
-        return current_user
-    return permission_checker
+    async def checker(user = Depends(get_current_user)):
+        perms = {
+            p.name
+            for role in user.roles
+            for p in role.permissions
+        }
+
+        if permission not in perms:
+            raise HTTPException(403, "Forbidden")
+
+        return user
+    return checker
+
 
 def generate_otp():
     return f"{secrets.randbelow(1000000):06}"
