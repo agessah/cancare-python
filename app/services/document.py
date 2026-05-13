@@ -1,8 +1,11 @@
+import mimetypes
 import os
 import uuid
 from pathlib import Path
 
 import aiofiles
+from fastapi.responses import FileResponse
+
 from app.core.config import Settings
 from app.repositories import DocumentRepository
 from fastapi import UploadFile, File, HTTPException, Depends, Request
@@ -64,6 +67,36 @@ class DocumentService:
         resource = await self.repo.get(resource_id)
 
         if not resource:
-            raise HTTPException(status_code=404, detail="Patient not found")
+            raise HTTPException(status_code=404, detail="Document not found")
 
         return resource
+
+
+    async def download(self, resource_id: int, download: bool):
+        resource = await self.repo.get(resource_id)
+
+        if not resource:
+            raise HTTPException(404, "File not found")
+
+        file_path = Path(resource.path).resolve()
+
+        if not file_path.exists() or not file_path.is_file():
+            raise HTTPException(404, "File not found")
+
+        # Detect content type
+        content_type, _ = mimetypes.guess_type(file_path)
+        if not content_type:
+            content_type = "application/octet-stream"
+
+        # Set disposition
+        disposition = "attachment" if download else "inline"
+
+        headers = {
+            "Content-Disposition": f'{disposition}; filename="{resource.name}"'
+        }
+
+        return FileResponse(
+            path=file_path,
+            media_type=content_type,
+            headers=headers
+        )

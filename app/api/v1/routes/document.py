@@ -3,6 +3,7 @@ from app.schemas.base import ResponseUpsertWrapper
 from app.schemas.document import DocumentResponse, DocumentResponseWrapper
 from app.services import DocumentService
 from fastapi import APIRouter, UploadFile, Form, File, Depends, Request, Query
+from fastapi.responses import FileResponse
 from fastapi_pagination import Page
 
 router = APIRouter()
@@ -76,3 +77,12 @@ async def create(
     })
 
     return {"detail": "Record created successfully", "data": data}
+
+
+@router.get("/{resource_id}/download", response_model=None, status_code=200)
+async def download(
+    resource_id: int,
+    _download: bool = Query(False),
+    service: DocumentService = Depends(get_document_service)
+):
+    return await service.download(resource_id, _download)
