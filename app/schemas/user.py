@@ -1,7 +1,7 @@
-from typing import List, Optional
+from typing import Optional
 
-from app.db.models.user import Role
 from pydantic import BaseModel, EmailStr
+
 
 class UserResponse(BaseModel):
     id: int
@@ -9,7 +9,7 @@ class UserResponse(BaseModel):
     email: str
     phone: str
     active: bool
-    role: Role
+    #role: Role
 
     class Config:
         from_attributes = True
@@ -23,7 +23,7 @@ class UserBase(BaseModel):
 
 class UserCreate(UserBase):
     password: str
-    role: Role = Role.CHP
+    role: Optional[int] = [1]
 
 
 class UserUpdate(BaseModel):
@@ -31,12 +31,12 @@ class UserUpdate(BaseModel):
     phone: Optional[str] = None
     email: Optional[EmailStr] = None
     password: Optional[str] = None
-    role: Optional[Role]
+    role: Optional[int]
 
 
 class UserOut(UserBase):
     id: int
-    role: Role
+    #role: Role
 
     class Config:
         orm_mode = True

@@ -1,8 +1,7 @@
-from sqlalchemy import String, Integer, Boolean, Enum as SAEnum
-from sqlalchemy.orm import Mapped, mapped_column, relationship
 from app.db.base import Base
 from app.db.models.mixins import AuditMixin, ActiveMixin
-
+from sqlalchemy import String, Integer
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 class User(AuditMixin, Base, ActiveMixin):
     __tablename__ = "users"

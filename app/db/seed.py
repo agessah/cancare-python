@@ -13,6 +13,7 @@ from app.db.seeders.media_type import MediaTypeSeeder
 from app.db.seeders.follow_up_status import FollowUpStatusSeeder
 from app.db.seeders.medical_facility import MedicalFacilitySeeder
 from app.db.seeders.subcounty import SubCountySeeder
+from app.db.seeders.role import RoleSeeder
 from app.db.seeders.user import UserSeeder
 
 import os
@@ -32,6 +33,7 @@ seeders = [
     DocumentCategorySeeder("app/db/data/document_categories.csv"),
     MediaTypeSeeder("app/db/data/media_types.csv"),
     MedicalFacilitySeeder("app/db/data/sha_public_hospitals.xlsx"),
+    RoleSeeder("app/db/data/roles.csv"),
     UserSeeder()
 ]
 

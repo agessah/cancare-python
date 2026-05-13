@@ -10,7 +10,8 @@ from app.db.events import current_user_id
 from fastapi import Depends, HTTPException
 from fastapi.security import OAuth2PasswordBearer
 
-from app.db.models.user import User, Role, ROLE_PERMISSIONS
+from app.db.models.user import User
+from app.db.models.role import Role
 from app.db.session import get_db
 
 pwd_context = CryptContext(schemes=["argon2"], deprecated="auto")
