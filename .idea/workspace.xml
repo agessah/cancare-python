@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9d2426d3-6b8b-4dc5-b0cd-936f15c9d850" name="Changes" comment="AI Results">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -233,7 +232,7 @@
       <workItem from="1776587608431" duration="1281000" />
       <workItem from="1776626472956" duration="1521000" />
       <workItem from="1776670910607" duration="92000" />
-      <workItem from="1778691645056" duration="1523000" />
+      <workItem from="1778691645056" duration="1874000" />
     </task>
     <task id="LOCAL-00001" summary="Referral Module">
       <option name="closed" value="true" />
@@ -531,7 +530,15 @@
       <option name="project" value="LOCAL" />
       <updated>1776629719165</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="AI Results">
+      <option name="closed" value="true" />
+      <created>1778693222197</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1778693222197</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
