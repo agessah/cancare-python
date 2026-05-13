@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d2426d3-6b8b-4dc5-b0cd-936f15c9d850" name="Changes" comment="AI Results">
-      <change beforePath="$PROJECT_DIR$/app/services/encounter_assessment.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/encounter_assessment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,8 +123,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-3bd3a6803838-JavaScript-PY-261.22158.340" />
-        <option value="bundled-python-sdk-b63d5a1f7c97-b61e75351b1f-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-261.22158.340" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-PY-261.23567.174" />
+        <option value="bundled-python-sdk-024ed6589d45-c2ffad84badb-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-261.23567.174" />
       </set>
     </attachedChunks>
   </component>
@@ -229,7 +231,9 @@
       <workItem from="1776522821049" duration="9359000" />
       <workItem from="1776571699821" duration="2015000" />
       <workItem from="1776587608431" duration="1281000" />
-      <workItem from="1776626472956" duration="1479000" />
+      <workItem from="1776626472956" duration="1521000" />
+      <workItem from="1776670910607" duration="92000" />
+      <workItem from="1778691645056" duration="1523000" />
     </task>
     <task id="LOCAL-00001" summary="Referral Module">
       <option name="closed" value="true" />
@@ -519,7 +523,15 @@
       <option name="project" value="LOCAL" />
       <updated>1776627228941</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="AI Results">
+      <option name="closed" value="true" />
+      <created>1776629719165</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1776629719165</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
