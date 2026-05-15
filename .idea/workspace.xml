@@ -5,38 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d2426d3-6b8b-4dc5-b0cd-936f15c9d850" name="Changes" comment="AI Results">
-      <change afterPath="$PROJECT_DIR$/app/repositories/permission.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/repositories/role.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/schemas/common.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/services/role.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/templates/email/link.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/deps.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/deps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/v1/routes/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/routes/auth.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/v1/routes/document.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/routes/document.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/v1/routes/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/routes/user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/db/models/patient.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/models/patient.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/db/models/tele_consultation.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/models/tele_consultation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/repositories/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/repositories/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/repositories/document.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/document.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/repositories/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/schemas/county.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/county.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/schemas/document.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/document.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/schemas/encounter_assessment.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/encounter_assessment.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/schemas/follow_up.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/follow_up.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/schemas/medical_facility.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/medical_facility.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/schemas/patient.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/patient.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/schemas/referral.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/referral.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/schemas/sub_county.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/sub_county.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/schemas/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/auth.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/document.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/document.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/encounter_assessment.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/encounter_assessment.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/referral.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/referral.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/user.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -266,7 +236,7 @@
       <workItem from="1778790546278" duration="8817000" />
       <workItem from="1778839584105" duration="7780000" />
       <workItem from="1778848124059" duration="6351000" />
-      <workItem from="1778865643659" duration="17661000" />
+      <workItem from="1778865643659" duration="17985000" />
     </task>
     <task id="LOCAL-00001" summary="Referral Module">
       <option name="closed" value="true" />
@@ -596,7 +566,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778703319987</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="AI Results">
+      <option name="closed" value="true" />
+      <created>1778884552612</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1778884552614</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
