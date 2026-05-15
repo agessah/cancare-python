@@ -39,6 +39,14 @@ async def paged(
     )
 
 
+@router.get("/profile", response_model=UserResponse)
+async def profile(
+    current_user=Depends(get_current_user),
+    service: UserService = Depends(get_user_service)
+):
+    return await service.show(current_user.id)
+
+
 @router.get("/{resource_id}", response_model=UserResponse)
 async def show(
     resource_id: int,
@@ -64,10 +72,3 @@ async def update(
 ):
     data = await service.update(resource_id, payload)
     return {"detail": "Record updated successfully", "data": data}
-
-@router.get("/profile", response_model=UserResponseWrapper)
-async def profile(
-    current_user=Depends(get_current_user),
-    service: UserService = Depends(get_user_service)
-):
-    return await service.show(current_user.id)
