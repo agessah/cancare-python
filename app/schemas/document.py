@@ -1,17 +1,18 @@
 from __future__ import annotations
 
+from datetime import datetime
 from typing import List
 
-from app.schemas.document_category import DocumentCategoryResponse
-from app.schemas.media_type import MediaTypeResponse
 from pydantic import BaseModel
 from pydantic.generics import GenericModel
+from app.schemas.common import DocumentCategoryMiniResponse, MediaTypeMiniResponse
 
 
 class DocumentResponse(BaseModel):
     id: int
-    category: DocumentCategoryResponse
-    type: MediaTypeResponse
+    updated_at: datetime
+    category: DocumentCategoryMiniResponse
+    type: MediaTypeMiniResponse
     name: str
     path: str
     active: bool
@@ -40,6 +41,12 @@ class DocumentUpdate(BaseModel):
 
 class DocumentResponseWrapper(BaseModel):
     data: List[DocumentResponse]
+
+
+class DocumentStatistics(BaseModel):
+    category_id: int
+    category_name: str
+    total: float
 
 
 DocumentResponse.model_rebuild()

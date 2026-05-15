@@ -1,6 +1,6 @@
 from typing import List
 
-from app.schemas.sub_county import SubCountyResponse
+from app.schemas.common import SubCountyMiniResponse
 from pydantic import BaseModel
 
 
@@ -9,7 +9,7 @@ class CountyResponse(BaseModel):
     code: str
     name: str
     town: str
-    subcounties: List[SubCountyResponse]
+    subcounties: List[SubCountyMiniResponse]
     active: bool
 
     class Config:

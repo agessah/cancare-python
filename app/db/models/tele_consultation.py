@@ -18,7 +18,7 @@ class TeleConsultation(AuditMixin, Base, ActiveMixin):
         nullable=False
     )
 
-    patient: Mapped["Patient"] = relationship("Patient", lazy="selectin")
+    patient: Mapped["Patient"] = relationship("Patient", back_populates="consultations", lazy="selectin")
     chw: Mapped["User"] = relationship(
         "User",
         foreign_keys=[chw_id],

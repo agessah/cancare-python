@@ -16,6 +16,8 @@ from app.repositories import (
     SubCountyRepository,
     FollowUpRepository,
     UserRepository,
+    RoleRepository,
+    PermissionRepository,
     TeleConsultationRepository,
     DocumentRepository
 )
@@ -32,6 +34,7 @@ from app.services import (
     ReferralService,
     SubCountyService,
     UserService,
+    RoleService,
     TeleConsultationService,
     DocumentService,
     UtilsService
@@ -60,14 +63,24 @@ def set_current_user(
 def get_auth_service(
     db: AsyncSession = Depends(get_db),
     email_service: EmailService = Depends(get_email_service),
-) -> AuthService:
-    return AuthService(db=db, email_service=email_service)
+):
+    repo = UserRepository(db)
+    role_repo = RoleRepository(db)
+    return AuthService(repo, role_repo, email_service)
 
 def get_user_service(
     db: AsyncSession = Depends(get_db),
 ):
     repo = UserRepository(db)
-    return UserService(repo)
+    role_repo = RoleRepository(db)
+    return UserService(repo, role_repo)
+
+def get_role_service(
+    db: AsyncSession = Depends(get_db),
+):
+    repo = RoleRepository(db)
+    perm_repo = PermissionRepository(db)
+    return RoleService(repo, perm_repo)
 
 def get_county_service(
     db: AsyncSession = Depends(get_db),

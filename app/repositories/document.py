@@ -1,9 +1,11 @@
 from app.db.models import Document
 from app.repositories.base import BaseRepository
 from app.utils.query_builder import apply_filters, apply_search, apply_sort
+from app.db.models import DocumentCategory
 from fastapi import Request
 from fastapi_pagination.ext.sqlalchemy import paginate
-from sqlalchemy import select
+from app.schemas.document import DocumentStatistics
+from sqlalchemy import select, func
 from sqlalchemy.orm import selectinload
 
 
@@ -47,3 +49,37 @@ class DocumentRepository(BaseRepository[Document]):
         else:
             result = await self.db.execute(stmt)
             return {"data": result.scalars().all()}
+
+
+    async def statistics(self):
+        stmt = (
+            #select(
+             #   DocumentCategory.id.label("category_id"),
+              #  DocumentCategory.name.label("category_name"),
+               # func.count(Document.id).label("total")
+            #)
+            #.join(DocumentCategory, Document.category_id == DocumentCategory.id)
+            #.group_by(DocumentCategory.id, DocumentCategory.name)
+            #.order_by(DocumentCategory.name)
+
+            select(
+                DocumentCategory.id.label("category_id"),
+                DocumentCategory.name.label("category_name"),
+                func.coalesce(func.count(Document.id), 0).label("total")
+            )
+            .outerjoin(Document, Document.category_id == DocumentCategory.id)
+            .group_by(DocumentCategory.id, DocumentCategory.name)
+            .order_by(DocumentCategory.name)
+        )
+
+        result = await self.db.execute(stmt)
+        rows = result.all()
+
+        return [
+            DocumentStatistics(
+                category_id=row.category_id,
+                category_name=row.category_name,
+                total=float(row.total or 0)
+            )
+            for row in rows
+        ]

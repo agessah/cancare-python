@@ -18,6 +18,7 @@ class ReferralService:
 
         return await self.repo.update(resource_id, payload.model_dump(exclude_unset=True))
 
+
     async def index(
         self,
         request: Request,
@@ -31,6 +32,7 @@ class ReferralService:
             sort=sort,
             filters=filters
         )
+
 
     async def show(self, resource_id: int):
         resource = await self.repo.get(resource_id)

@@ -11,6 +11,7 @@ from .media_type import MediaTypeService
 from .medical_facility import MedicalFacilityService
 from .patient import PatientService
 from .referral import ReferralService
+from .role import RoleService
 from .sub_county import SubCountyService
 from .tele_consultation import TeleConsultationService
 from .user import UserService
@@ -19,6 +20,7 @@ from .utils import UtilsService
 __all__ = [
     "AuthService",
     "UserService",
+    "RoleService",
     "PatientService",
     "EncounterAssessmentService",
     "CountyService",

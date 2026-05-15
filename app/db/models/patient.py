@@ -33,3 +33,9 @@ class Patient(AuditMixin, SoftDeleteMixin, Base, ActiveMixin):
         cascade="all, delete-orphan",
         lazy="selectin"
     )
+    consultations: Mapped[List["TeleConsultation"]] = relationship(
+        "TeleConsultation",
+        back_populates="patient",
+        cascade="all, delete-orphan",
+        lazy="selectin"
+    )

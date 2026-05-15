@@ -2,18 +2,17 @@ from __future__ import annotations
 
 from typing import List
 
-from app.schemas.level import LevelResponse
-from app.schemas.medical_facility import MedicalFacilityResponse
-from app.schemas.patient import PatientResponse
+from app.schemas.common import LevelMiniResponse, PatientMiniResponse, MedicalFacilityMiniResponse, FollowUpMiniResponse
 from pydantic import BaseModel
 
 
 class ReferralResponse(BaseModel):
     id: int
-    patient: PatientResponse
-    medical_facility: MedicalFacilityResponse
+    patient: PatientMiniResponse
+    medical_facility: MedicalFacilityMiniResponse
     notes: str
-    urgency_level: LevelResponse
+    urgency_level: LevelMiniResponse
+    follow_ups: List[FollowUpMiniResponse]
     active: bool
 
     class Config:

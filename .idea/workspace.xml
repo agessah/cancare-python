@@ -5,7 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d2426d3-6b8b-4dc5-b0cd-936f15c9d850" name="Changes" comment="AI Results">
+      <change afterPath="$PROJECT_DIR$/app/repositories/permission.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/repositories/role.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/schemas/common.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/services/role.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/email/link.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/deps.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/deps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/v1/routes/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/routes/auth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/v1/routes/document.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/routes/document.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/v1/routes/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/routes/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db/models/patient.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/models/patient.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db/models/tele_consultation.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/models/tele_consultation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/repositories/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/repositories/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/repositories/document.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/document.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/repositories/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemas/county.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/county.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemas/document.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/document.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemas/encounter_assessment.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/encounter_assessment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemas/follow_up.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/follow_up.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemas/medical_facility.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/medical_facility.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemas/patient.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/patient.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemas/referral.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/referral.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemas/sub_county.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/sub_county.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemas/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/auth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/document.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/document.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/encounter_assessment.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/encounter_assessment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/referral.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/referral.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/user.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,42 +74,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;ai.playground.ignore.import.keys.banner.in.settings&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;//wsl$/FedoraLinux-43/home/agessah/workspace/python/cancer-care/app/db/seeders&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;settings.editor.splitter.proportion&quot;: &quot;0.32892057&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "ai.playground.ignore.import.keys.banner.in.settings": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "//wsl$/FedoraLinux-43/home/agessah/workspace/python/cancer-care/app/templates/email",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "aDefault",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "settings.editor.splitter.proportion": "0.32892057",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;,
-      &quot;bigquery&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql",
+      "bigquery"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="\\wsl$\FedoraLinux-43\home\agessah\workspace\python\cancer-care\app\templates\email" />
+      <recent name="\\wsl$\FedoraLinux-43\home\agessah\workspace\python\cancer-care\app\services" />
+      <recent name="\\wsl$\FedoraLinux-43\home\agessah\workspace\python\cancer-care\app\repositories" />
+      <recent name="\\wsl$\FedoraLinux-43\home\agessah\workspace\python\cancer-care\app\api\v1\routes" />
       <recent name="\\wsl$\FedoraLinux-43\home\agessah\workspace\python\cancer-care\app\db\seeders" />
-      <recent name="\\wsl$\FedoraLinux-43\home\agessah\workspace\python\cancer-care\app\db\data" />
-      <recent name="\\wsl$\FedoraLinux-43\home\agessah\workspace\python\cancer-care\app\ai\ultimate" />
-      <recent name="\\wsl$\FedoraLinux-43\home\agessah\workspace\python\cancer-care\app\ai" />
-      <recent name="\\wsl$\FedoraLinux-43\home\agessah\workspace\python\cancer-care\app\schemas" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="\\wsl$\FedoraLinux-43\home\agessah\workspace\python\cancer-care\app\ai\test" />
@@ -230,7 +261,12 @@
       <workItem from="1776626472956" duration="1521000" />
       <workItem from="1776670910607" duration="92000" />
       <workItem from="1778691645056" duration="9060000" />
-      <workItem from="1778702965263" duration="327000" />
+      <workItem from="1778702965263" duration="1432000" />
+      <workItem from="1778784570040" duration="3244000" />
+      <workItem from="1778790546278" duration="8817000" />
+      <workItem from="1778839584105" duration="7780000" />
+      <workItem from="1778848124059" duration="6351000" />
+      <workItem from="1778865643659" duration="17661000" />
     </task>
     <task id="LOCAL-00001" summary="Referral Module">
       <option name="closed" value="true" />
@@ -552,7 +588,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778698977444</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="AI Results">
+      <option name="closed" value="true" />
+      <created>1778703319986</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1778703319987</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

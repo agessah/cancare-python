@@ -1,8 +1,3 @@
-from app.services.email_service import EmailService
-from fastapi import HTTPException
-from jose import JWTError
-from sqlalchemy.ext.asyncio import AsyncSession
-
 from app.core.security import (
     hash_password,
     verify_password,
@@ -10,82 +5,87 @@ from app.core.security import (
     create_token,
     decode_token, generate_otp
 )
-from app.db.models import User
-from app.repositories.user import UserRepository
-from app.schemas.auth import RegisterRequest, ActivateRequest, ForgotRequest, ResetRequest
+from app.repositories import UserRepository, RoleRepository
+from app.schemas.auth import RegisterRequest, ActivateRequest, ForgotRequest, ResetRequest, LoginRequest
+from app.services.email_service import EmailService
+from fastapi import HTTPException
+from jose import JWTError
 
 
 class AuthService:
-    def __init__(self, db: AsyncSession, email_service):
-        self.db = db
+    def __init__(
+            self,
+            repo: UserRepository,
+            role_repo: RoleRepository,
+            email_service
+    ):
+        self.repo = repo
+        self.role_repo = role_repo
         self.email_service = email_service
 
-    @staticmethod
-    async def register(es: EmailService, db: AsyncSession, payload: RegisterRequest):
-        phone_exists = await UserRepository.get_by_phone(db, payload.phone)
+
+    async def register(self, payload: RegisterRequest, es: EmailService):
+        phone_exists = await self.repo.get_by_phone(payload.phone)
         if phone_exists:
             raise HTTPException(400, "Phone number already exists!")
 
-        email_exists = await UserRepository.get_by_email(db, payload.email)
+        email_exists = await self.repo.get_by_email(payload.email)
         if email_exists:
             raise HTTPException(400, "Email address already exists!")
 
-        if payload.channel == "mobile":
+        data = payload.model_dump()
+        channel = data.pop("channel")
+        password = data.pop("password")
+        role_ids = data.pop("role_ids", [])
+
+        if channel == "mobile":
             otp = generate_otp()
 
-            user = User(
-                name=payload.name,
-                phone=payload.phone,
-                email=payload.email,
-                password=hash_password(payload.password),
-                token=hash_password(otp),
-                active=False
-            )
+            data["password"] = hash_password(password)
+            data["token"] = hash_password(otp)
+            data["active"] = False
 
-            await UserRepository.create(db, user)
-            await db.refresh(user)
+            user = await self.repo.create(data)
             await es.send_otp(user.email, otp, "Verification Code")
 
         else :
-            user = User(
-                name=payload.name,
-                phone=payload.phone,
-                email=payload.email,
-                password=hash_password(payload.password),
-                active=False
-            )
+            data["password"] = hash_password(password)
+            data["active"] = False
 
-            await UserRepository.create(db, user)
-            await db.refresh(user)
+            user = await self.repo.create(data)
 
-            #token = create_token(user.id, "activation")
-            #await send_link_email(user.email, token, "activation")
+            token = create_token(user.id, "activation")
+            await es.send_link(user.email, token, "activation")
+
+        #Attach roles
+        roles = await self.role_repo.get_roles(role_ids)
+        if roles:
+            await self.repo.sync_roles(user, roles)
 
         return { "message": "User created. Please check your email to activate your account." }
     
 
-    @staticmethod
-    async def activate_account(db: AsyncSession, request: ActivateRequest):
-        if request.channel == "mobile":
-            user = await UserRepository.get_by_email(db, request.email)
+    async def activate_account(self, payload: ActivateRequest):
+        if payload.channel == "mobile":
+            user = await self.repo.get_by_email(payload.email)
             if not user:
                 raise HTTPException(404, "User not found!")
 
-            if not verify_password(request.token, user.token):
+            if not verify_password(payload.token, user.token):
                 raise HTTPException(401, "Invalid or expired token!")
 
             user.token = None
 
         else:
             try:
-                payload = decode_token(request.token)
+                payload = decode_token(payload.token)
 
                 if payload.get("type") != "activation":
                     raise HTTPException(status_code=400, detail="Invalid token type!")
 
                 user_id = int(payload.get("sub"))
 
-                user = await UserRepository.get_by_id(db, user_id)
+                user = await self.repo.get_by_id(user_id)
                 if not user:
                     raise HTTPException(400, "Invalid activation token!")
 
@@ -95,55 +95,51 @@ class AuthService:
         if user.active:
             raise HTTPException(409,"Account already activated!")
 
-        user.active = True
-        await UserRepository.commit(db)
+        data = {
+            "token": None,
+            "active": True
+        }
+
+        await self.repo.update(user.id, data)
 
         return { "message": "Account activated successfully." }
     
 
-    @staticmethod
-    async def forgot_password(es: EmailService, db: AsyncSession, request: ForgotRequest):
-        user = await UserRepository.get_by_email(db, request.email)
+    async def forgot_password(self, payload: ForgotRequest, es: EmailService):
+        user = await self.repo.get_by_email(payload.email)
         if not user:
             raise HTTPException(404, "User not found!")
 
-        if request.channel == "mobile":
+        if payload.channel == "mobile":
             otp = generate_otp()
-            user.token = hash_password(otp)
 
-            await UserRepository.create(db, user)
-            await db.refresh(user)
+            await self.repo.update(user.id, { "token": hash_password(otp) })
+
             await es.send_otp(user.email, otp, "Reset Code")
 
         else:
-            await UserRepository.commit(db)
-            await db.refresh(user)
-
-            #token = create_token(user.id, "reset")
+            token = create_token(user.id, "reset")
 
             # Send activation email
-            ##########await send_token_email(user.email, token, "reset")
+            await es.send_link(user.email, token, "reset")
 
         return { "message": "Password reset email sent. Please check your email to reset your password." }
     
 
-    @staticmethod
-    async def reset_password(db: AsyncSession, request: ResetRequest):
-        if request.channel == "mobile":
+    async def reset_password(self, payload: ResetRequest):
+        if payload.channel == "mobile":
 
-            user = await UserRepository.get_by_email(db, request.email)
+            user = await self.repo.get_by_email(payload.email)
             if not user:
                 raise HTTPException(404, "User not found!")
 
-            if not verify_password(request.token, user.token):
+            if not verify_password(payload.token, user.token):
                 raise HTTPException(401, "Invalid or expired token!")
-
-            user.token = None
 
         else:
 
             try:
-                payload = decode_token(request.token)
+                payload = decode_token(payload.token)
 
                 if payload.get("type") != "reset":
                     raise HTTPException(status_code=400, detail="Invalid token type!")
@@ -153,19 +149,22 @@ class AuthService:
             except JWTError:
                 raise HTTPException(status_code=400, detail="Invalid or expired token!")
 
-            user = await UserRepository.get_by_id(db, user_id)
+            user = await self.repo.get_by_id(user_id)
             if not user:
                 raise HTTPException(400, "Invalid reset token!")
 
-        user.password = hash_password(request.password)
-        await UserRepository.commit(db)
+        data = {
+            "token": None,
+            "password": hash_password(payload.password)
+        }
+
+        await self.repo.update(user.id, data)
 
         return { "message": "Password reset successful." }
 
 
-    @staticmethod
-    async def login(db: AsyncSession, phone: str, password: str):
-        user = await UserRepository.get_by_phone(db, phone)
+    async def login(self, payload: LoginRequest):
+        user = await self.repo.get_by_username(payload.username)
 
         if not user:
             raise HTTPException(401, "Invalid credentials")
@@ -173,7 +172,7 @@ class AuthService:
         if not user.active:
             raise HTTPException(403, "Account not activated")
 
-        if not verify_password(password, user.password):
+        if not verify_password(payload.password, user.password):
             raise HTTPException(401, "Invalid credentials")
 
         token = create_access_token({"sub": str(user.id)})

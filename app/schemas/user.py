@@ -1,6 +1,7 @@
-from typing import Optional
+from typing import Optional, List
 
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel, EmailStr, Field
+from app.schemas.common import RoleOut
 
 
 class UserResponse(BaseModel):
@@ -23,7 +24,7 @@ class UserBase(BaseModel):
 
 class UserCreate(UserBase):
     password: str
-    role: Optional[int] = [1]
+    role_ids: List[int] = Field(default_factory=lambda: [1])
 
 
 class UserUpdate(BaseModel):
@@ -31,19 +32,19 @@ class UserUpdate(BaseModel):
     phone: Optional[str] = None
     email: Optional[EmailStr] = None
     password: Optional[str] = None
-    role: Optional[int]
+    role_ids: Optional[List[int]] = None
 
 
 class UserOut(UserBase):
     id: int
-    #role: Role
+    roles: list[RoleOut] = []
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 class UserResponseWrapper(BaseModel):
-    data: UserResponse
+    data: List[UserResponse]
 
 
 UserResponse.model_rebuild()

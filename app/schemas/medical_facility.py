@@ -1,13 +1,12 @@
-from app.schemas.county import CountyResponse
-from app.schemas.sub_county import SubCountyResponse
+from app.schemas.common import CountyMiniResponse, SubCountyMiniResponse
 from pydantic import BaseModel
 from typing import List
 
 class MedicalFacilityResponse(BaseModel):
     id: int
     name: str
-    county: CountyResponse
-    sub_county: SubCountyResponse
+    county: CountyMiniResponse
+    sub_county: SubCountyMiniResponse
     active: bool
 
     class Config:

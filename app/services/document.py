@@ -100,3 +100,6 @@ class DocumentService:
             media_type=content_type,
             headers=headers
         )
+
+    async def statistics(self):
+        return await self.repo.statistics()

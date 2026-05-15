@@ -1,9 +1,10 @@
+from typing import List
+
 from app.api.deps import get_document_service
 from app.schemas.base import ResponseUpsertWrapper
-from app.schemas.document import DocumentResponse, DocumentResponseWrapper
+from app.schemas.document import DocumentResponse, DocumentResponseWrapper, DocumentStatistics
 from app.services import DocumentService
 from fastapi import APIRouter, UploadFile, Form, File, Depends, Request, Query
-from fastapi.responses import FileResponse
 from fastapi_pagination import Page
 
 router = APIRouter()
@@ -52,6 +53,13 @@ async def paged(
         sort=sort,
         filters=filters
     )
+
+
+@router.get("/statistics", response_model=List[DocumentStatistics])
+async def statistics(
+    service: DocumentService = Depends(get_document_service)
+):
+    return await service.statistics()
 
 
 @router.get("/{resource_id}", response_model=DocumentResponse)

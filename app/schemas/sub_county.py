@@ -1,13 +1,13 @@
 from typing import List
 
-#from app.schemas.county import CountyResponse
 from pydantic import BaseModel
+from app.schemas.common import CountyMiniResponse
 
 
 class SubCountyResponse(BaseModel):
     id: int
     name: str
-    #county: List[CountyResponse]
+    county: CountyMiniResponse
     active: bool
 
     class Config:

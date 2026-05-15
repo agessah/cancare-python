@@ -3,13 +3,14 @@ from __future__ import annotations
 from decimal import Decimal
 from typing import List, Optional
 
-from app.schemas.patient import PatientResponse
+
 from pydantic import BaseModel
+from app.schemas.common import PatientMiniResponse
 
 
 class EncounterAssessmentResponse(BaseModel):
     id: int
-    patient: PatientResponse
+    patient: PatientMiniResponse
     age: int
     above_fifty: bool
     painless_lump: bool
@@ -35,6 +36,8 @@ class EncounterAssessmentResponse(BaseModel):
 
     class Config:
         from_attributes = True
+
+
 
 
 class EncounterAssessmentBase(BaseModel):

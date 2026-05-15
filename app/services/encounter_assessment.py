@@ -56,6 +56,7 @@ class EncounterAssessmentService:
             "guidelines": interpreted.get("guidelines")
         }
 
+
     async def update(self, resource_id, payload):
         resource = await self.repo.get(resource_id)
 
@@ -63,6 +64,7 @@ class EncounterAssessmentService:
             raise HTTPException(404, "Encounters assessment not found!")
 
         return await self.repo.update(resource_id, payload.model_dump(exclude_unset=True))
+
 
     async def index(
         self,
@@ -77,6 +79,7 @@ class EncounterAssessmentService:
             sort=sort,
             filters=filters
         )
+
 
     async def show(self, resource_id: int):
         resource = await self.repo.get(resource_id)

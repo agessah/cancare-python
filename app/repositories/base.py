@@ -33,7 +33,6 @@ class BaseRepository(Generic[ModelType]):
                 raise HTTPException(400, "Database integrity error occurred")
 
 
-
     async def update(self, obj_id: int, data: dict) -> Optional[ModelType]:
         try:
             obj = await self.db.get(self.model, obj_id)
@@ -68,7 +67,7 @@ class BaseRepository(Generic[ModelType]):
         return True
 
 
-    async def get(self, obj_id: int) -> Optional[ModelType]:
+    async def   get(self, obj_id: int) -> Optional[ModelType]:
         return await self.db.get(self.model, obj_id)
 
 

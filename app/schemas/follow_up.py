@@ -2,15 +2,14 @@ from __future__ import annotations
 
 from typing import List
 
-from app.schemas.follow_up_status import FollowUpStatusResponse
-from app.schemas.referral import ReferralResponse
+from app.schemas.common import ReferralMiniResponse, FollowUpStatusMiniResponse
 from pydantic import BaseModel
 
 
 class FollowUpResponse(BaseModel):
     id: int
-    referral: ReferralResponse
-    status: FollowUpStatusResponse
+    referral: ReferralMiniResponse
+    status: FollowUpStatusMiniResponse
     notes: str
     active: bool
 

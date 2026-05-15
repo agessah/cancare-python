@@ -3,9 +3,16 @@ from __future__ import annotations
 from datetime import date
 from typing import List
 
-from app.schemas.county import CountyResponse
-from app.schemas.gender import GenderResponse
-from app.schemas.sub_county import SubCountyResponse
+
+from app.schemas.common import (
+    CountyMiniResponse,
+    SubCountyMiniResponse,
+    GenderMiniResponse,
+    #MedicalFacilityMiniResponse,
+    EncounterAssessmentMiniResponse,
+    ReferralMiniResponse,
+    TeleConsultationMiniResponse
+)
 from pydantic import BaseModel
 from pydantic.generics import GenericModel
 
@@ -15,10 +22,13 @@ class PatientResponse(BaseModel):
     name: str
     phone: str
     date_of_birth: date
-    gender: GenderResponse
+    gender: GenderMiniResponse
     location: str
-    county: CountyResponse
-    sub_county: SubCountyResponse
+    county: CountyMiniResponse
+    sub_county: SubCountyMiniResponse
+    encounter_assessments: List[EncounterAssessmentMiniResponse]
+    referrals: List[ReferralMiniResponse]
+    consultations: List[TeleConsultationMiniResponse]
     active: bool
 
     class Config:
